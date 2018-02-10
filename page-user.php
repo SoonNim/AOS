@@ -256,158 +256,9 @@
 <!-- PART REVIEW -->
           <div class="col-lg-9" id="hereChoiseReview" style="display:none">
               <header class="text-center mb-4">
-                <h3 class="h3 g-color-darkgrey g-font-weight-600">Derniers posts</h3>
+                <h3 class="h3 g-color-darkgrey g-font-weight-600">Mes publications</h3>
               </header>
-            <!-- Reviews (Option 1) -->
-            <div class="card border-0 g-mb-40">
-              <!-- Panel Header -->
-              <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
-                <h3 class="h6 mb-0">
-                    <i class="icon-heart g-pos-rel g-top-1 g-mr-5"></i> Reviews <small>(option 1)</small>
-                  </h3>
-                <div class="dropdown g-mb-10 g-mb-0--md">
-                  <span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="icon-options-vertical g-pos-rel g-top-1"></i>
-                    </span>
-                  <div class="dropdown-menu dropdown-menu-right rounded-0 g-mt-10">
-                    <a class="dropdown-item g-px-10" href="#!">
-                      <i class="icon-layers g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Projects
-                    </a>
-                    <a class="dropdown-item g-px-10" href="#!">
-                      <i class="icon-wallet g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Wallets
-                    </a>
-                    <a class="dropdown-item g-px-10" href="#!">
-                      <i class="icon-fire g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Reports
-                    </a>
-                    <a class="dropdown-item g-px-10" href="#!">
-                      <i class="icon-settings g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Users Setting
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-
-                    <a class="dropdown-item g-px-10" href="#!">
-                      <i class="icon-plus g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> View More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- End Panel Header -->
-
-              <!-- Panel Body -->
-              <div class="card-block g-pa-0">
-                <div class="media g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-20">
-                  <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-2 g-mr-20" src="web/assets/img-temp/100x100/img4.jpg" alt="Image Description">
-                  <div class="media-body">
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
-                      <header class="g-mb-5 g-mb-0--sm">
-                        <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5">James Coolman</h5>
-                        <div class="js-rating g-color-yellow" data-rating="5"></div>
-                      </header>
-                      <div class="text-nowrap g-font-size-12">
-                        <span class="text-muted">2 days ago</span>
-                      </div>
-                    </div>
-
-                    <p>First of all, thank you very much for making this theme! It is beautiful both when looked at in the browser and especially also when looking at the HTML, CSS etc. source code. Close too Bootstrap, great technical quality and documentation:
-                      your theme is clearly the best! And I've really looked at and compared *lots* of them! :-)</p>
-
-                    <ul class="list-inline my-0">
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i> 214
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-dislike g-pos-rel g-top-1 g-mr-3"></i> 35
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-share g-pos-rel g-top-1 g-mr-3"></i> 52
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="media g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-20">
-                  <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-2 g-mr-20" src="web/assets/img-temp/100x100/img7.jpg" alt="Image Description">
-                  <div class="media-body">
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
-                      <header class="g-mb-5 g-mb-0--sm">
-                        <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5">David Lee</h5>
-                        <div class="js-rating g-color-yellow" data-rating="5"></div>
-                      </header>
-                      <div class="text-nowrap g-font-size-12">
-                        <span class="text-muted">3 days ago</span>
-                      </div>
-                    </div>
-
-                    <p>Thanks a lot. You have no idea how much I appreciate all your help. You are not just a great designer but an amazing human being, because so many people won't give a rat ass about what happen to their clients AFTER THE SALE, and you
-                      are not. Again, thanks a lot</p>
-
-                    <ul class="list-inline my-0">
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i> 178
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-dislike g-pos-rel g-top-1 g-mr-3"></i> 14
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-share g-pos-rel g-top-1 g-mr-3"></i> 12
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="media g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-20">
-                  <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-2 g-mr-20" src="web/assets/img-temp/100x100/img5.jpg" alt="Image Description">
-                  <div class="media-body">
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
-                      <header class="g-mb-5 g-mb-0--sm">
-                        <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5">Sally Manning</h5>
-                        <div class="js-rating g-color-yellow" data-rating="5"></div>
-                      </header>
-                      <div class="text-nowrap g-font-size-12">
-                        <span class="text-muted">2 days ago</span>
-                      </div>
-                    </div>
-
-                    <p>First of all, thank you very much for making this theme! It is beautiful both when looked at in the browser and especially also when looking at the HTML, CSS etc. source code. Close too Bootstrap, great technical quality and documentation:
-                      your theme is clearly the best! And I've really looked at and compared *lots* of them! :-)</p>
-
-                    <ul class="list-inline my-0">
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i> 214
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-dislike g-pos-rel g-top-1 g-mr-3"></i> 35
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">
-                          <i class="icon-share g-pos-rel g-top-1 g-mr-3"></i> 52
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <a class="btn btn-block u-btn-darkgray rounded-0 g-py-10" href="#!">Load More</a>
-              </div>
-              <!-- End Panel Body -->
-            </div>
-            <!-- End Reviews (Option 1) -->
+            <?php include 'includes/myallimg.php'; ?>
           </div>
 <!-- END PART REVIEW -->
 
@@ -1833,6 +1684,7 @@
   <script src="web/assets/js/components/hs.scrollbar.js"></script>
   <script src="web/assets/js/components/hs.go-to.js"></script>
   <script  src="../../assets/js/components/hs.popup.js"></script>
+  <script  src="../../assets/js/components/hs.rating.js"></script>
 
 
   <!-- JS Customization -->
@@ -1854,7 +1706,12 @@
         $.HSCore.components.HSPopup.init('.js-fancybox', {
           transitionEffect: false
         });
-      });
+
+        // initialization of rating
+       $.HSCore.components.HSRating.init($('.js-rating'), {
+         spacing: 4
+       });
+    });
 
       $(window).on('load', function () {
         // initialization of header
