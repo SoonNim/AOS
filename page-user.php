@@ -26,7 +26,11 @@
   <link rel="stylesheet" href="web/assets/vendor/icon-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="web/assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="web/assets/vendor/icon-line/css/simple-line-icons.css">
+<<<<<<< HEAD
   <link  rel="stylesheet" href="../../assets/vendor/fancybox/jquery.fancybox.min.css">
+=======
+  <link  rel="stylesheet" href="web/assets/vendor/fancybox/jquery.fancybox.min.css">
+>>>>>>> alizee
   <link rel="stylesheet" href="web/assets/vendor/hamburgers/hamburgers.min.css">
   <link rel="stylesheet" href="web/assets/vendor/icon-etlinefont/style.css">
   <link rel="stylesheet" href="web/assets/vendor/icon-line-pro/style.css">
@@ -1605,7 +1609,11 @@
             <footer class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 text-center g-pt-60 g-pb-40">
               <!-- Footer Content -->
               <div class="container">
+<<<<<<< HEAD
                 <a class="d-block g-width-200 g-opacity-0_5 mx-auto g-mb-30" href="../index.html">
+=======
+                <a class="d-block g-width-200 g-opacity-0_5 mx-auto g-mb-30" href="index.html">
+>>>>>>> alizee
                   <img class="img-fluid" src="web/assets/img/logo.png" alt="Logo">
                 </a>
 
@@ -1673,7 +1681,11 @@
   <script src="web/assets/vendor/appear.js"></script>
   <script src="web/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
   <script src="web/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<<<<<<< HEAD
   <script  src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+=======
+  <script  src="web/assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+>>>>>>> alizee
 
   <!-- JS Unify -->
   <script src="web/assets/js/hs.core.js"></script>
@@ -1683,8 +1695,13 @@
   <script src="web/assets/js/components/hs.progress-bar.js"></script>
   <script src="web/assets/js/components/hs.scrollbar.js"></script>
   <script src="web/assets/js/components/hs.go-to.js"></script>
+<<<<<<< HEAD
   <script  src="../../assets/js/components/hs.popup.js"></script>
   <script  src="../../assets/js/components/hs.rating.js"></script>
+=======
+  <script  src="web/assets/js/components/hs.popup.js"></script>
+  <script  src="web/assets/js/components/hs.rating.js"></script>
+>>>>>>> alizee
 
 
   <!-- JS Customization -->
