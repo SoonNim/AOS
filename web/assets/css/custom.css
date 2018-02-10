@@ -1,0 +1,12 @@
+
+/* Background Animation */
+
+@keyframes defile {
+from {background-position: 0px 0px;}
+to {background-position: 0px -1000px;}
+}
+#backgroundAnimation {
+animation: defile;
+animation-duration: 120s;
+background-size: cover;
+}
