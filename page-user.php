@@ -69,9 +69,6 @@
               <img src="web/assets/img/logo-8.png" alt="Image Description">
             </a>
             <!-- End Logo -->
-            <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-              <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="includes/deconnexion.php">Se deconnecter</a>
-            </div>
           </div>
         </nav>
       </div>
@@ -87,7 +84,7 @@
             <i class="fa fa-angle-right g-ml-7"></i>
           </li>
           <li class="list-inline-item g-color-primary">
-            <span> <?php  echo($_SESSION['nom']."   ".$_SESSION['prenom']); ?> </span>
+            <span> <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?></span>
           </li>
         </ul>
       </div>
@@ -371,30 +368,37 @@
           </div>
 <!-- END PART HISTORY -->
 
-
 <!-- PART MAIN -->
         <div class="col-lg-9" id="hereChoiseMain" style="display:block">
           <div class="row g-mb-40">
               <div class="col-md-6 g-mb-30 g-mb-0--md">
                 <div class="g-bg-cyan g-color-white g-pa-25">
-                                      <form method="post" action="azerty.php" enctype="multipart/form-data">
-                                      <input type="file" name="myimg" id="myimg">
-                                    <br/><br/>
-                                      <button type="submit" name="envmyimg" id="envmyimg" value="envmyimg">Ajouter</button>
-                                    </form>
-                                    </div>
+                  <header class="d-flex text-uppercase g-mb-40">
+                    <i class="icon-people align-self-center display-4 g-mr-20"></i>
 
-                                    <?php
-                                    if($_GET['msg']=="error")
-                                    {
-                                      include 'includes/ohSnapImg.php';
-                                    }
-                                    elseif($_GET['msg']=="success")
-                                    {
-                                      include 'includes/wellDoneImg.php';
-                                    }
-                                     ?>
+                    <div class="g-line-height-1">
+                      <h4 class="h5">Overal Visits</h4>
+                      <div class="js-counter g-font-size-30" data-comma-separated="true">52147</div>
+                    </div>
+                  </header>
+
+                  <div class="d-flex justify-content-between text-uppercase g-mb-25">
+                    <div class="g-line-height-1">
+                      <h5 class="h6 g-font-weight-600">Last Week</h5>
+                      <div class="js-counter g-font-size-16" data-comma-separated="true">1385</div>
+                    </div>
+
+                    <div class="text-right g-line-height-1">
+                      <h5 class="h6 g-font-weight-600">Last Month</h5>
+                      <div class="js-counter g-font-size-16" data-comma-separated="true">6048</div>
+                    </div>
                   </div>
+
+                  <h6 class="g-mb-10">Project Completeness <span class="float-right g-ml-10">72%</span></h6>
+                  <div class="js-hr-progress-bar progress g-bg-black-opacity-0_1 rounded-0 g-mb-10">
+                    <div class="js-hr-progress-bar-indicator progress-bar g-bg-white u-progress-bar--xs" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small class="g-font-size-12">11% less than last month</small>
                 </div>
               </div>
 
@@ -926,19 +930,6 @@
                       </span>
                   </li>
                   <!-- End Primary Email Address -->
-
-                  <!-- Your face -->
-                <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                  <div class="g-pr-10">
-                    <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre photo de profil</strong>
-                    <span class="align-top"><?echo($_SESSION['mail'])?></span>
-                    <input type="file" name="face" />
-                  </div>
-                  <span>
-                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                    </span>
-                </li>
-                <!-- End your face -->
                 </ul>
 
                 <div class="text-sm-right">
