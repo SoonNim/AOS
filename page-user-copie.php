@@ -1671,7 +1671,8 @@
 
   <!-- JS Implementing Plugins -->
   <script src="web/assets/vendor/appear.js"></script>
-  <script src="web/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="web/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="web/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
   <script  src="web/assets/vendor/fancybox/jquery.fancybox.min.js"></script>
 

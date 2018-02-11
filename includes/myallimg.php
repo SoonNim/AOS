@@ -1,126 +1,125 @@
-<!-- Products Block -->
-<div class="row">
-  <div class="col-md-6 col-lg-4 g-mb-30">
-    <!-- Article -->
-    <article class="u-shadow-v19 g-bg-white g-pos-rel">
-      <!-- Article Image -->
-      <img class="w-100 d-block g-rounded-top-5" src="../../assets/img-temp/400x270/img5.jpg" alt="Image Description">
-      <!-- End Article Image -->
+<!--  FIRST -->
+<div class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-40">
+              <div class="row">
+                <div class="col-lg-4 g-mb-40 g-mb-0--lg">
+                  <!-- User Image -->
+                  <div class="u-block-hover g-pos-rel g-mb-20">
+                    <figure>
+                      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="web/assets/img-temp/400x450/img1.jpg" alt="Image Description">
+                    </figure>
 
-      <!-- Article Content -->
-      <div class="g-rounded-bottom-5 g-pa-30">
+                    <!-- Figure Caption -->
+                    <figcaption class="u-block-hover__additional--fade g-bg-black-opacity-0_5 g-pa-30">
+                      <div class="u-block-hover__additional--fade u-block-hover__additional--fade-up g-flex-middle">
+                        <!-- Figure Social Icons -->
+                        <ul class="list-inline text-center g-flex-middle-item--bottom g-mb-20">
+                          <li class="list-inline-item align-middle g-mx-7">
+                            <a class="u-icon-v1 u-icon-size--md g-color-white" href="#!">
+                              <i class="icon-note u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item align-middle g-mx-7">
+                            <a class="u-icon-v1 u-icon-size--md g-color-white" href="#!">
+                              <i class="icon-notebook u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item align-middle g-mx-7">
+                            <a class="u-icon-v1 u-icon-size--md g-color-white" href="#!">
+                              <i class="icon-settings u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- End Figure Social Icons -->
+                      </div>
+                    </figcaption>
+                    <!-- End Figure Caption -->
+                  </div>
+                  <!-- User Image -->
 
-        <p class="g-mb-25">This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                  <!-- User Contact Buttons -->
 
-        <!-- Article Icons -->
-        <hr class="g-brd-gray-light-v4 g-my-0">
+                  <!-- End User Contact Buttons -->
+                </div>
 
-        <!-- Figure List -->
-        <ul class="row list-inline g-py-20 g-ma-0">
-          <li class="col g-brd-right g-brd-gray-light-v4">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-cyan--hover" href="#!">
-              <i class="icon-speech"></i>
-            </a>
-          </li>
-          <li class="col g-brd-right g-brd-gray-light-v4">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="#!">
-              <i class="icon-envelope-letter"></i>
-            </a>
-          </li>
-          <li class="col">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-purple--hover" href="#!">
-              <i class="icon-screen-smartphone"></i>
-            </a>
-          </li>
-        </ul>
-        <!-- End Figure List -->
-        <!-- End Article Icons -->
-      </div>
-      <!-- End Article Content -->
-    </article>
-    <!-- End Article -->
-  </div>
+                <div class="col-lg-8">
+                  <!-- User Details -->
+                  <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                    <p class="lead g-line-height-1_8">About elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est. Dell viverra cursus nibh volutpat at.</p>
+                  </div>
+                  <!-- End User Details -->
+                  <hr class="g-brd-gray-light-v4 g-my-20">
 
-  <div class="col-md-6 col-lg-4 g-mb-30">
-    <!-- Article -->
-    <article class="u-shadow-v19 g-bg-white g-pos-rel">
-      <!-- Article Image -->
-      <img class="w-100 d-block g-rounded-top-5" src="../../assets/img-temp/400x270/img6.jpg" alt="Image Description">
-      <!-- End Article Image -->
+                  <!-- User Skills -->
+                  <div class="d-flex flex-wrap text-center">
+                    <a class="btn btn-block u-btn-darkgray g-rounded-50 g-py-12 g-mb-10" href="#!">
+                      <i class="fas fa-trash"></i>  Supprimer
+                    </a>
+                  </div>
+                  <!-- End User Skills -->
+                </div>
+              </div>
+            </div>
+<!--  END FIRST -->
 
+<!--  SECOND -->
+<div class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-40">
+              <div class="row">
+                <div class="col-lg-4 g-mb-40 g-mb-0--lg">
+                  <!-- User Image -->
+                  <div class="u-block-hover g-pos-rel g-mb-20">
+                    <figure>
+                      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="web/assets/img-temp/400x450/img1.jpg" alt="Image Description">
+                    </figure>
 
-      <!-- Article Content -->
-      <div class="g-rounded-bottom-5 g-pa-30">
-        <p class="g-mb-25">This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                    <!-- Figure Caption -->
+                    <figcaption class="u-block-hover__additional--fade g-bg-black-opacity-0_5 g-pa-30">
+                      <div class="u-block-hover__additional--fade u-block-hover__additional--fade-up g-flex-middle">
+                        <!-- Figure Social Icons -->
+                        <ul class="list-inline text-center g-flex-middle-item--bottom g-mb-20">
+                          <li class="list-inline-item align-middle g-mx-7">
+                            <a class="u-icon-v1 u-icon-size--md g-color-white" href="#!">
+                              <i class="icon-note u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item align-middle g-mx-7">
+                            <a class="u-icon-v1 u-icon-size--md g-color-white" href="#!">
+                              <i class="icon-notebook u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item align-middle g-mx-7">
+                            <a class="u-icon-v1 u-icon-size--md g-color-white" href="#!">
+                              <i class="icon-settings u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- End Figure Social Icons -->
+                      </div>
+                    </figcaption>
+                    <!-- End Figure Caption -->
+                  </div>
+                  <!-- User Image -->
 
-        <!-- Article Icons -->
-        <hr class="g-brd-gray-light-v4 g-my-0">
+                  <!-- User Contact Buttons -->
 
-        <!-- Figure List -->
-        <ul class="row list-inline g-py-20 g-ma-0">
-          <li class="col g-brd-right g-brd-gray-light-v4">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-cyan--hover" href="#!">
-              <i class="icon-speech"></i>
-            </a>
-          </li>
-          <li class="col g-brd-right g-brd-gray-light-v4">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="#!">
-              <i class="icon-envelope-letter"></i>
-            </a>
-          </li>
-          <li class="col">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-purple--hover" href="#!">
-              <i class="icon-screen-smartphone"></i>
-            </a>
-          </li>
-        </ul>
-        <!-- End Figure List -->
-        <!-- End Article Icons -->
-      </div>
-      <!-- End Article Content -->
-    </article>
-    <!-- End Article -->
-  </div>
+                  <!-- End User Contact Buttons -->
+                </div>
 
-  <div class="col-md-6 col-lg-4 g-mb-30">
-    <!-- Article -->
-    <article class="u-shadow-v19 g-bg-white g-pos-rel">
-      <!-- Article Image -->
-      <img class="w-100 d-block g-rounded-top-5" src="../../assets/img-temp/400x270/img7.jpg" alt="Image Description">
-      <!-- End Article Image -->
+                <div class="col-lg-8">
+                  <!-- User Details -->
+                  <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                    <p class="lead g-line-height-1_8">About elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est. Dell viverra cursus nibh volutpat at.</p>
+                  </div>
+                  <!-- End User Details -->
+                  <hr class="g-brd-gray-light-v4 g-my-20">
 
-      <!-- Article Content -->
-      <div class="g-rounded-bottom-5 g-pa-30">
-
-        <p class="g-mb-15">This is where we sit down, grab a cup of coffee and dial in the details.</p>
-
-        <!-- Article Icons -->
-        <hr class="g-brd-gray-light-v4 g-my-0">
-
-        <!-- Figure List -->
-        <ul class="row list-inline g-py-20 g-ma-0">
-          <li class="col g-brd-right g-brd-gray-light-v4">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-cyan--hover" href="#!">
-              <i class="icon-speech"></i>
-            </a>
-          </li>
-          <li class="col g-brd-right g-brd-gray-light-v4">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="#!">
-              <i class="icon-envelope-letter"></i>
-            </a>
-          </li>
-          <li class="col">
-            <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-purple--hover" href="#!">
-              <i class="icon-screen-smartphone"></i>
-            </a>
-          </li>
-        </ul>
-        <!-- End Figure List -->
-        <!-- End Article Icons -->
-      </div>
-      <!-- End Article Content -->
-    </article>
-    <!-- End Article -->
-  </div>
-</div>
-<!-- End Products Block -->
+                  <!-- User Skills -->
+                  <div class="d-flex flex-wrap text-center">
+                    <a class="btn btn-block u-btn-darkgray g-rounded-50 g-py-12 g-mb-10" href="#!">
+                      <i class="fas fa-trash"></i>  Supprimer
+                    </a>
+                  </div>
+                  <!-- End User Skills -->
+                </div>
+              </div>
+            </div>
+  <!--  END SECOND -->
