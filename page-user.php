@@ -111,7 +111,9 @@
 
               <!-- User Info -->
               <span class="g-pos-abs g-top-20 g-left-0">
-                  <a class="btn btn-sm u-btn-primary rounded-0" href="#!"><?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?></a>
+                  <a class="btn btn-sm u-btn-primary rounded-0" href="#!">
+                    <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?>
+                </a>
                 </span>
               <!-- End User Info -->
             </div>
@@ -166,6 +168,10 @@
 
                     <div class="g-line-height-1">
                       <h4 class="h5">Overal Visits</h4>
+                      <?php
+                      echo(' NOM :  '.$_SESSION['nom'].'   / PRENOM :   '.$_SESSION['prenom'].' / MAIL :  '.
+                      $_SESSION['mail'].'  / ID : '.$_SESSION['id_utilisateur'].'    / LINK : '.$_SESSION['img_link'].'    / USER : '.$_SESSION['id_user'])
+                       ?>
                     </div>
                   </header>
                 </div>
@@ -198,7 +204,7 @@
             <header class="text-center mb-4">
               <h3 class="h3 g-color-darkgrey g-font-weight-600">Mes publications</h3>
             </header>
-          <?php include 'includes/user/user-myAll.php'; ?>
+          <?php include 'includes/model/user-myAll.php'; ?>
           <?php include 'includes/pagination.php' ?>
         </div>
 <!-- END PART PUBLISH -->

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <header class="text-center mb-4">
                 <h3 class="h3 g-color-darkgrey g-font-weight-600">Paramètre du compte</h3>
               </header>

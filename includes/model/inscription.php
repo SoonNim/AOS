@@ -34,7 +34,7 @@
         $msg = "alert";
 
         //Redirection
-        header("location:" . "../page-signup.php?msg=$msg");
+        header("location:" . "../../page-signup.php?msg=$msg");
         exit;
       }
       else {
@@ -44,7 +44,7 @@
               $nom = strtoupper($nom);
               $prenom = ucfirst(strtolower($prenom));
               $msg="success";
-              header("location:" . "../page-signup.php?msg=$msg&nom=$nom&prenom=$prenom");
+              header("location:" . "../../page-signup.php?msg=$msg&nom=$nom&prenom=$prenom");
 
               exit;
 

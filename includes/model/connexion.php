@@ -29,11 +29,11 @@
           //Test des droits
           include "link.php";
           switch($odata->users_role){
-            case 'ADMIN': header("Location: ../page-user.php?login=$login&password=$password");
+            case 'ADMIN': header("Location: ../../page-user.php");
             exit;
             break;
 
-            case 'USER': header("Location: ../page-user.php");
+            case 'USER': header("Location: ../../page-user.php");
             exit;
             break;
 
