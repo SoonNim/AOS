@@ -1,3 +1,7 @@
+<br/>
+<hr class="g-brd-gray-light-v4 g-my-0">
+<br/>
+
 <!-- Pagination -->
 <nav class="text-center" aria-label="Page Navigation">
   <ul class="list-inline">
