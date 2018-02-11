@@ -1,7 +1,4 @@
 <?php
-//Activer le gestionnaire de session
-  session_start();
-
   // Variables session USER
 $_SESSION['nom'] = strtoupper($odata->users_nom);
 $_SESSION['active'] = $odata->users_active;

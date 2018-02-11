@@ -8,15 +8,7 @@
 
     //Connection base de donnée avec PDO
     try {
-      $dsn = 'mysql:host=localhost;dbname=aos;charset=utf8';
-      $user = 'root';
-      $pass = 'root';
-
-      $options = array();// Tableau des options
-
-      //Creer une instance de PDO
-      $dbh = new PDO($dsn,$user,$pass,$options);
-      $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      include "bdd.php";
 
       // La requete SQL
       $query = "SELECT * FROM users WHERE users_login = '$login' AND users_mdp = '$password'";
@@ -35,6 +27,7 @@
           //Compte actif ou pas?
         if($odata->users_active == 1){
           //Test des droits
+          include "link.php";
           switch($odata->users_role){
             case 'ADMIN': header("Location: ../page-user.php?login=$login&password=$password");
             exit;
