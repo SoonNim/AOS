@@ -1,3 +1,6 @@
+<?php
+ session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -66,11 +69,6 @@
               <img src="web/assets/img/logo-8.png" alt="Image Description">
             </a>
             <!-- End Logo -->
-
-            <!--  Button sign out -->
-            <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-              <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="includes/deconnexion.php">Se deconnecter</a>
-              <!--  End button sign out -->
           </div>
         </nav>
       </div>
@@ -78,7 +76,7 @@
     <!-- End Header -->
 
     <!-- Breadcrumb -->
-    <section class="g-my-9">
+    <section class="g-my-30">
       <div class="container">
         <ul class="u-list-inline">
           <li class="list-inline-item g-mr-7">
@@ -86,7 +84,7 @@
             <i class="fa fa-angle-right g-ml-7"></i>
           </li>
           <li class="list-inline-item g-color-primary">
-              <span> <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?></span>
+            <span> <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?></span>
           </li>
         </ul>
       </div>
@@ -120,7 +118,9 @@
             <div class="list-group list-group-border-0 g-mb-40">
               <!-- Overall -->
               <a href="#" class="list-group-item justify-content-between active" id="choiseMain">
-                <span><i class="icon-home g-pos-rel g-top-1 g-mr-8"></i> Profil</span>
+                <span><i class="icon-home g-pos-rel g-top-1 g-mr-8"></i> Overall</span>
+
+                <span class="u-label g-font-size-11 g-bg-gray-dark-v2 g-rounded-20 g-px-10">2</span>
               </a>
               <!-- End Overall -->
 
@@ -137,13 +137,14 @@
 
               <!-- Reviews -->
               <a href="#" class="list-group-item list-group-item-action justify-content-between" id="choiseReview">
-                <span><i class="icon-heart g-pos-rel g-top-1 g-mr-8"></i> Publications</span>
+                <span><i class="icon-heart g-pos-rel g-top-1 g-mr-8"></i> Reviews</span>
               </a>
               <!-- End Reviews -->
 
               <!-- Settings -->
               <a href="#" class="list-group-item list-group-item-action justify-content-between" id="choiseSetting">
                 <span><i class="icon-settings g-pos-rel g-top-1 g-mr-8"></i> Paramètre</span>
+                <span class="u-label g-font-size-11 g-bg-cyan g-rounded-20 g-px-8">3</span>
               </a>
               <!-- End Settings -->
             </div>
@@ -155,15 +156,15 @@
           <!-- Profile Content -->
 
 <!-- PART MAIN -->
-        <div class="col-lg-9" id="hereChoiseMain" style="display:block">
-          <div class="row g-mb-10">
-              <div class="col-md-12 g-mb-30 g-mb-0--md">
-                <div class="g-bg-blue g-color-white g-pa-25">
+        <div class="col-lg-10" id="hereChoiseMain" style="display:block">
+          <div class="row g-mb-40">
+              <div class="col-md-6 g-mb-30 g-mb-0--md">
+                <div class="g-bg-cyan g-color-white g-pa-25">
                   <header class="d-flex text-uppercase g-mb-40">
                     <i class="icon-people align-self-center display-4 g-mr-20"></i>
 
                     <div class="g-line-height-1">
-                      <h4 class="h5">Overal Visits</h4>
+                      <h4 class="h5">Publier</h4>
                     </div>
                   </header>
                 </div>
@@ -172,19 +173,47 @@
             <!-- End Overall Statistics -->
 
             <!-- Projects & News Feeds Panels -->
-            <div class="row g-mb-10">
-              <div class="col-lg-12 g-mb-10 g-mb-0--lg">
+            <div class="row g-mb-40">
+              <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <!-- Notifications Panel -->
                 <div class="card border-0">
                   <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5
-                       border-0 g-mb-10">
+                       border-0 g-mb-15">
                     <h3 class="h6 mb-0">
-                        <i class="icon-list g-pos-rel g-top-1 g-mr-5"></i> Dernières publications
+                        <i class="icon-list g-pos-rel g-top-1 g-mr-5"></i> Notifications
                       </h3>
+                    <div class="dropdown g-mb-10 g-mb-0--md">
+                      <span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="icon-options-vertical g-pos-rel g-top-1"></i>
+                        </span>
+                    </div>
                   </div>
-                  <?php include 'includes/lastImg.php' ?>
+
+                  <div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-300 g-pa-0">
+                    <!-- Alert Success -->
+                    <div class="alert fade show g-bg-primary-opacity-0_1 g-color-primary rounded-0 g-mb-5" role="alert">
+                      <button type="button" class="close u-alert-close--light g-ml-10 g-mt-1" data-dismiss="alert"
+                              aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+
+                      <div class="media">
+                        <div class="d-flex g-mr-10">
+                          <img class="g-width-40 g-height-40 g-rounded-50x" src=".web/assets/img-temp/100x100/img5.jpg"
+                               alt="Image Description">
+                        </div>
+                        <div class="media-body">
+                          <p class="m-0"><strong>Jasica Coolman</strong> saved your pin.</p>
+                          <span class="g-font-size-12 g-color-gray">2 hours ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Alert Success -->
+                  </div>
                 </div>
                 <!-- End Notifications Panel -->
+              </div>
               </div>
             </div>
             <!-- End Projects & News Feeds Panels -->
@@ -360,19 +389,11 @@
                 data-btn-classes="btn btn-md btn-block rounded-0 u-btn-outline-primary g-mb-20">
               <li class="nav-item">
                 <a class="nav-link g-py-10 active" data-toggle="tab" href="#nav-1-1-default-hor-left-underline--1"
-                   role="tab">Edit Profile</a>
+                   role="tab">Profil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link g-py-10" data-toggle="tab" href="#nav-1-1-default-hor-left-underline--2"
-                   role="tab">Security Settings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link g-py-10" data-toggle="tab" href="#nav-1-1-default-hor-left-underline--3"
-                   role="tab">Payment Options</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link g-py-10" data-toggle="tab" href="#nav-1-1-default-hor-left-underline--4"
-                   role="tab">Notification Settings</a>
+                   role="tab">Sécurité</a>
               </li>
             </ul>
             <!-- End Nav tabs -->
@@ -381,27 +402,13 @@
             <div id="nav-1-1-default-hor-left-underline" class="tab-content">
               <!-- Edit Profile -->
               <div class="tab-pane fade show active" id="nav-1-1-default-hor-left-underline--1" role="tabpanel">
-                <h2 class="h4 g-font-weight-300">Manage your Name, ID and Email Addresses</h2>
-                <p>Below are name, email addresse, contacts and more on file for your account.</p>
 
                 <ul class="list-unstyled g-mb-30">
-                  <!-- Name -->
-                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                    <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Name</strong>
-                      <span class="align-top">John Doe</span>
-                    </div>
-                    <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
-                  </li>
-                  <!-- End Name -->
-
                   <!-- Your ID -->
                   <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
                     <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Your ID</strong>
-                      <span class="align-top">FKJ-032440</span>
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">votre ID Utilisateur</strong>
+                      <span class="align-top"><?php echo($_SESSION[id_utilisateur]) ?></span>
                     </div>
                     <span>
                         <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
@@ -409,122 +416,73 @@
                   </li>
                   <!-- End Your ID -->
 
-                  <!-- Company Name -->
+                  <!-- Name -->
                   <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
                     <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Company name</strong>
-                      <span class="align-top">Htmlstream</span>
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Nom</strong>
+                      <span class="align-top"><?php echo($_SESSION['nom'] )?></span>
                     </div>
                     <span>
                         <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
                       </span>
                   </li>
-                  <!-- End Company Name -->
+                  <!-- End Name -->
 
-                  <!-- Position -->
+                  <!-- FirstName -->
                   <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
                     <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Position</strong>
-                      <span class="align-top">Project Manager</span>
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Prenom</strong>
+                      <span class="align-top"><?php echo($_SESSION['prenom']) ?></span>
                     </div>
                     <span>
                         <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
                       </span>
                   </li>
-                  <!-- End Position -->
+                  <!-- End FirstName -->
 
-                  <!-- Primary Email Address -->
+                  <!-- Your login -->
                   <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
                     <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Primary email address</strong>
-                      <span class="align-top">john.doe@htmlstream.com</span>
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre identifiant</strong>
+                      <span class="align-top"><?echo($_SESSION['auth'])?></span>
+                    </div>
+                    <span>
+                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
+                      </span>
+                  </li>
+                  <!-- End Your Login -->
+
+                    <!-- Primary Email Address -->
+                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+                    <div class="g-pr-10">
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre adresse mail</strong>
+                      <span class="align-top"><?echo($_SESSION['mail'])?></span>
                     </div>
                     <span>
                         <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
                       </span>
                   </li>
                   <!-- End Primary Email Address -->
-
-                  <!-- Linked Account -->
-                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                    <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Linked account</strong>
-                      <span class="align-top">Facebook</span>
-                    </div>
-                    <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
-                  </li>
-                  <!-- End Linked Account -->
-
-                  <!-- Website -->
-                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                    <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Website</strong>
-                      <span class="align-top">https://htmlstream.com</span>
-                    </div>
-                    <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
-                  </li>
-                  <!-- End Website -->
-
-                  <!-- Phone Number -->
-                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                    <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Phone number</strong>
-                      <span class="align-top">(+123) 456 7890</span>
-                    </div>
-                    <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
-                  </li>
-                  <!-- End Phone Number -->
-
-                  <!-- Office Number -->
-                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                    <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Office number</strong>
-                      <span class="align-top">(+123) 456 7891</span>
-                    </div>
-                    <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
-                  </li>
-                  <!-- End Office Number -->
-
-                  <!-- Address -->
-                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-                    <div class="g-pr-10">
-                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Address</strong>
-                      <span class="align-top">795 Folsom Ave, Suite 600, San Francisco CA, US </span>
-                    </div>
-                    <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
-                  </li>
-                  <!-- End Address -->
                 </ul>
 
                 <div class="text-sm-right">
-                  <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Cancel</a>
-                  <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Save Changes</a>
+                  <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Annuler</a>
+                  <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Enregistrer</a>
                 </div>
               </div>
               <!-- End Edit Profile -->
 
               <!-- Security Settings -->
               <div class="tab-pane fade" id="nav-1-1-default-hor-left-underline--2" role="tabpanel">
-                <h2 class="h4 g-font-weight-300">Security Settings</h2>
-                <p class="g-mb-25">Reset your password, change verifications and so on.</p>
+                <h2 class="h4 g-font-weight-300">Sécurité</h2>
 
                 <form>
                   <!-- Current Password -->
                   <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Current password</label>
+                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Mot de passe actuel</label>
                     <div class="col-sm-9">
                       <div class="input-group g-brd-primary--focus">
-                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password" placeholder="Current password">
+                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password">
                         <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
                           <i class="icon-lock"></i>
                         </div>
@@ -535,10 +493,10 @@
 
                   <!-- New Password -->
                   <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">New password</label>
+                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Nouveau mot de passe</label>
                     <div class="col-sm-9">
                       <div class="input-group g-brd-primary--focus">
-                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password" placeholder="New password">
+                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password">
                         <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
                           <i class="icon-lock"></i>
                         </div>
@@ -549,10 +507,10 @@
 
                   <!-- Verify Password -->
                   <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Verify password</label>
+                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Confirmer mot de passe</label>
                     <div class="col-sm-9">
                       <div class="input-group g-brd-primary--focus">
-                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password" placeholder="Verify password">
+                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password">
                         <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
                           <i class="icon-lock"></i>
                         </div>
@@ -561,362 +519,14 @@
                   </div>
                   <!-- End Verify Password -->
 
-                  <!-- Login Verification -->
-                  <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Login verification</label>
-                    <div class="col-sm-9">
-                      <label class="form-check-inline u-check g-pl-25">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-                        <div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
-                        <!-- <i class="fa" data-check-icon='&#xf00c'> </i> -->
-                        </div>
-                        Verify login requests
-                      </label>
-                      <small class="d-block text-muted">You need to add a phone to your profile account to enable this feature.</small>
-                    </div>
-                  </div>
-                  <!-- End Login Verification -->
-
-                  <!-- Password Reset -->
-                  <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Password reset</label>
-                    <div class="col-sm-9">
-                      <label class="form-check-inline u-check g-pl-25">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-                        <div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
-                          <!-- <i class="fa" data-check-icon="&#xf00c"></i> -->
-                        </div>
-                        Require personal information to reset my password
-                      </label>
-                      <small class="d-block text-muted">When you check this box, you will be required to verify additional information before you can request a password reset with just your email address.</small>
-                    </div>
-                  </div>
-                  <!-- End Password Reset -->
-
-                  <!-- Save Password -->
-                  <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Save password</label>
-                    <div class="col-sm-9">
-                      <label class="form-check-inline u-check mx-0">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="savePassword" type="checkbox">
-                        <div class="u-check-icon-radio-v7">
-                          <i class="d-inline-block"></i>
-                        </div>
-                      </label>
-                      <small class="d-block text-muted">When you check this box, you will be saved automatically login to your profile account. Also, you will be always logged in all our services.</small>
-                    </div>
-                  </div>
-                  <!-- End Save Password -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-25">
-
                   <div class="text-sm-right">
-                    <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Cancel</a>
-                    <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Save Changes</a>
+                    <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Annuler</a>
+                    <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Enregistrer</a>
                   </div>
                 </form>
               </div>
               <!-- End Security Settings -->
 
-              <!-- Payment Options -->
-              <div class="tab-pane fade" id="nav-1-1-default-hor-left-underline--3" role="tabpanel">
-                <h2 class="h4 g-font-weight-300">Manage your Payment Settings</h2>
-                <p class="g-mb-25">Below are the payment options for your account.</p>
-
-                <form>
-                  <!-- Payment Options -->
-                  <div class="row">
-                    <!-- Visa Card -->
-                    <div class="col-md-3">
-                      <label class="u-check w-100 g-mb-25">
-                        <strong class="d-block g-color-gray-dark-v2 g-font-weight-700 g-mb-10">Visa card</strong>
-                        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" type="radio" name="profilePayments" checked="">
-
-                        <div class="g-brd-primary--checked g-bg-primary-opacity-0_2--checked g-brd-around g-brd-gray-light-v2 g-rounded-5">
-                          <div class="media g-pa-12">
-                            <div class="media-body align-self-center g-color-blue">
-                              <i class="fa fa-cc-visa g-font-size-30 align-self-center mx-auto"></i>
-                            </div>
-
-                            <div class="d-flex align-self-center g-width-20 g-ml-15">
-                              <div class="u-check-icon-radio-v5 g-pos-rel g-width-20 g-height-20"><i></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <!-- End Visa Card -->
-
-                    <!-- Master Card -->
-                    <div class="col-md-3">
-                      <label class="u-check w-100 g-mb-25">
-                        <strong class="d-block g-color-gray-dark-v2 g-font-weight-700 g-mb-10">Master card</strong>
-                        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" type="radio" name="profilePayments">
-
-                        <div class="g-brd-primary--checked g-bg-primary-opacity-0_2--checked g-brd-around g-brd-gray-light-v2 g-rounded-5">
-                          <div class="media g-pa-12">
-                            <div class="media-body align-self-center g-color-lightred">
-                              <i class="fa fa-cc-mastercard g-font-size-30 align-self-center mx-auto"></i>
-                            </div>
-
-                            <div class="d-flex align-self-center g-width-20 g-ml-15">
-                              <div class="u-check-icon-radio-v5 g-pos-rel g-width-20 g-height-20"><i></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <!-- End Master Card -->
-
-                    <!-- Amazon Payments -->
-                    <div class="col-md-3">
-                      <label class="u-check w-100 g-mb-25">
-                        <strong class="d-block g-color-gray-dark-v2 g-font-weight-700 g-mb-10">Amazon payments</strong>
-                        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" type="radio" name="profilePayments">
-
-                        <div class="g-brd-primary--checked g-bg-primary-opacity-0_2--checked g-brd-around g-brd-gray-light-v2 g-rounded-5">
-                          <div class="media g-pa-12">
-                            <div class="media-body align-self-center g-color-orange">
-                              <i class="fa fa-amazon g-font-size-30 align-self-center mx-auto"></i>
-                            </div>
-
-                            <div class="d-flex align-self-center g-width-20 g-ml-15">
-                              <div class="u-check-icon-radio-v5 g-pos-rel g-width-20 g-height-20"><i></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <!-- End Amazon Payments -->
-
-                    <!-- Paypal -->
-                    <div class="col-md-3">
-                      <label class="u-check w-100 g-mb-25">
-                        <strong class="d-block g-color-gray-dark-v2 g-font-weight-700 g-mb-10">Paypal</strong>
-                        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" type="radio" name="profilePayments">
-
-                        <div class="g-brd-primary--checked g-bg-primary-opacity-0_2--checked g-brd-around g-brd-gray-light-v2 g-rounded-5">
-                          <div class="media g-pa-12">
-                            <div class="media-body align-self-center g-color-darkblue">
-                              <i class="fa fa-paypal g-font-size-30 align-self-center mx-auto"></i>
-                            </div>
-
-                            <div class="d-flex align-self-center g-width-20 g-ml-15">
-                              <div class="u-check-icon-radio-v5 g-pos-rel g-width-20 g-height-20"><i></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <!-- End Paypal -->
-                  </div>
-                  <!-- End Payment Options -->
-
-                  <!-- Card Name and Number -->
-                  <div class="row">
-                    <!-- Card Name -->
-                    <div class="col-md-6">
-                      <div class="form-group g-mb-20">
-                        <label class="g-color-gray-dark-v2 g-font-weight-700 g-mb-10" for="inputGroup1_1">Name on card</label>
-                        <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" placeholder="John Doe">
-                          <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
-                            <i class="icon-user"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End Card Name -->
-
-                    <!-- Card Number -->
-                    <div class="col-md-6">
-                      <div class="form-group g-mb-20">
-                        <label class="g-color-gray-dark-v2 g-font-weight-700 g-mb-10" for="inputGroup1_1">Card number</label>
-                        <div class="input-group g-brd-primary--focus">
-                          <input id="inputGroup1_3" class="form-control form-control-md g-brd-right-none rounded-0 g-py-13" type="text" placeholder="XXXX-XXXX-XXXX-XXXX" data-mask="9999-9999-9999-9999">
-                          <div class="input-group-addon d-flex align-items-center g-color-gray-dark-v5 rounded-0">
-                            <i class="icon-credit-card"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End Card Number -->
-                  </div>
-                  <!-- End Card Name and Number -->
-
-                  <!-- Card Expiration Dates and CVV Code -->
-                  <div class="row">
-                    <!-- Expiration Month -->
-                    <div class="col-md-4">
-                      <label class="g-color-gray-dark-v2 g-font-weight-700 g-mb-10" for="inputGroup1_1">Expiration month</label>
-                      <select class="js-custom-select u-select-v1 g-brd-gray-light-v2 g-color-gray-dark-v5 w-100 g-pt-11 g-pb-10" data-placeholder="Month" data-open-icon="fa fa-angle-down" data-close-icon="fa fa-angle-up">
-                        <option selected="">Month</option>
-                        <option value="1">January</option>
-                        <option value="1">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                      </select>
-                    </div>
-                    <!-- End Expiration Month -->
-
-                    <!-- Expiration Year -->
-                    <div class="col-md-4">
-                      <div class="form-group g-mb-20">
-                        <label class="g-color-gray-dark-v2 g-font-weight-700 g-mb-10" for="inputGroup1_1">Expiration year</label>
-                        <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" placeholder="2021">
-                          <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
-                            <i class="icon-calendar"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End Expiration Year -->
-
-                    <!-- CVV Code -->
-                    <div class="col-md-4">
-                      <div class="form-group g-mb-20">
-                        <label class="g-color-gray-dark-v2 g-font-weight-700 g-mb-10" for="inputGroup1_1">CVV code</label>
-                        <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" placeholder="2021">
-                          <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
-                            <i class="icon-lock"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End CVV Code -->
-                  </div>
-                  <!-- End Card Expiration Dates and CVV Code -->
-
-                  <!-- Billing Address -->
-                  <div class="form-group">
-                    <label class="d-block g-color-gray-dark-v2 g-font-weight-700 1text-sm-right g-mb-10">Billing address</label>
-                    <label class="u-check g-pl-25 mb-0">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-                      <div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
-                        <!-- <i class="fa" data-check-icon="&#xf00c"></i> -->
-                      </div>
-                      Same as shipping address?
-                    </label>
-                  </div>
-                  <!-- End Billing Address -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-25">
-
-                  <div class="text-sm-right">
-                    <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Cancel</a>
-                    <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Save Changes</a>
-                  </div>
-                </form>
-              </div>
-              <!-- End Payment Options -->
-
-              <!-- Notification Settings -->
-              <div class="tab-pane fade" id="nav-1-1-default-hor-left-underline--4" role="tabpanel">
-                <h2 class="h4 g-font-weight-300">Manage your Notifications</h2>
-                <p class="g-mb-25">Below are the notifications you may manage.</p>
-
-                <form>
-                  <!-- Email Notification -->
-                  <div class="form-group">
-                    <label class="d-flex align-items-center justify-content-between">
-                      <span>Email notification</span>
-                      <div class="u-check">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="emailNotification" type="checkbox" checked>
-                        <div class="u-check-icon-radio-v7">
-                          <i class="d-inline-block"></i>
-                        </div>
-                      </div>
-                    </label>
-                  </div>
-                  <!-- End Email Notification -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-20">
-
-                  <!-- Comments Notification -->
-                  <div class="form-group">
-                    <label class="d-flex align-items-center justify-content-between">
-                      <span>Send me email notification when a user comments on my blog</span>
-                      <div class="u-check">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="commentNotification" type="checkbox">
-                        <div class="u-check-icon-radio-v7">
-                          <i class="d-inline-block"></i>
-                        </div>
-                      </div>
-                    </label>
-                  </div>
-                  <!-- End Comments Notification -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-20">
-
-                  <!-- Update Notification -->
-                  <div class="form-group">
-                    <label class="d-flex align-items-center justify-content-between">
-                      <span>Send me email notification for the latest update</span>
-                      <div class="u-check">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="updateNotification" type="checkbox" checked>
-                        <div class="u-check-icon-radio-v7">
-                          <i class="d-inline-block"></i>
-                        </div>
-                      </div>
-                    </label>
-                  </div>
-                  <!-- End Update Notification -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-25">
-
-                  <!-- Message Notification -->
-                  <div class="form-group">
-                    <label class="d-flex align-items-center justify-content-between">
-                      <span>Send me email notification when a user sends me message</span>
-                      <div class="u-check">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="messageNotification" type="checkbox" checked>
-                        <div class="u-check-icon-radio-v7">
-                          <i class="d-inline-block"></i>
-                        </div>
-                      </div>
-                    </label>
-                  </div>
-                  <!-- End Message Notification -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-25">
-
-                  <!-- Newsletter Notification -->
-                  <div class="form-group">
-                    <label class="d-flex align-items-center justify-content-between">
-                      <span>Receive our monthly newsletter</span>
-                      <div class="u-check">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="newsletterNotification" type="checkbox">
-                        <div class="u-check-icon-radio-v7">
-                          <i class="d-inline-block"></i>
-                        </div>
-                      </div>
-                    </label>
-                  </div>
-                  <!-- End Newsletter Notification -->
-
-                  <hr class="g-brd-gray-light-v4 g-my-25">
-
-                  <div class="text-sm-right">
-                    <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Cancel</a>
-                    <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Save Changes</a>
-                  </div>
-                </form>
-              </div>
-              <!-- End Notification Settings -->
             </div>
             <!-- End Tab panes -->
           </div>
@@ -2105,31 +1715,56 @@
       </div>
     </section>
 
-  <!--  FOOTER -->
+    <!-- Footer -->
+     <div class="shortcode-html">
+            <!-- Footer -->
+            <footer class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 text-center g-pt-60 g-pb-40">
+              <!-- Footer Content -->
+              <div class="container">
+                <a class="d-block g-width-200 g-opacity-0_5 mx-auto g-mb-30" href="../index.html">
+                  <img class="img-fluid" src="web/assets/img/logo.png" alt="Logo">
+                </a>
 
-  <!-- Copyright Footer -->
-  <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-9">
-  <div class="container">
-   <div class="row">
-     <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
-       <div class="d-lg-flex">
-         <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 © All Rights Reserved.</small>
-         <ul class="u-list-inline">
-           <li class="list-inline-item">
-             <span>|</span>
-           </li>
-           <li class="list-inline-item">
-             <a class="g-color-white-opacity-0_8 g-color-white--hover" href="../index.html">PintAOS</a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </div>
-  </div>
-  </footer>
-  <!-- End Copyright Footer -->
+                <ul class="list-inline g-mb-20">
+                  <li class="list-inline-item g-mx-5">
+                    <a class="u-icon-v2 u-icon-size--sm g-font-size-16 g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded-circle" href="#!">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item g-mx-5">
+                    <a class="u-icon-v2 u-icon-size--sm g-font-size-16 g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded-circle" href="#!">
+                      <i class="fa fa-pinterest-p"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item g-mx-5">
+                    <a class="u-icon-v2 u-icon-size--sm g-font-size-16 g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded-circle" href="#!">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item g-mx-5">
+                    <a class="u-icon-v2 u-icon-size--sm g-font-size-16 g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded-circle" href="#!">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
 
-  <!--  END FOOTER -->
+                <div class="g-width-70x--md mx-auto">
+                  <p class="mb-0">Fusce dolor libero, efficitur et lobortis at, faucibus nec nunc. Proin fermentum turpis eget nisi facilisis lobortis. Praesent malesuada facilisis maximus. Donec sed lobortis tortor.</p>
+                </div>
+              </div>
+              <!-- End Footer Content -->
+              <hr class="g-brd-white-opacity-0_2 g-my-40">
+              <!-- Copyright -->
+              <div class="container">
+                <small class="g-font-size-default">2018 All right reserved. Unify Development by
+                  <a class="g-color-white" href="#!">Htmlstream</a>
+                </small>
+              </div>
+              <!-- End Copyright -->
+            </footer>
+            <!-- End Footer -->
+          </div>
+    <!-- End Footer -->
 
     <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
      "bottom": 15,
