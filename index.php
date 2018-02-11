@@ -45,7 +45,7 @@
               </header>
 
               <!-- Form -->
-              <form class="g-py-15" method="post" action="includes/connexion.php">
+              <form class="g-py-15" method="post" action="includes/model/connexion.php">
                 <div class="mb-4">
                   <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Identifiant :</label>
                   <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4

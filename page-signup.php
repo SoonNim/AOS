@@ -76,7 +76,7 @@
               </header>
 
               <!-- Form -->
-              <form class="g-py-15" method="post" action="includes/inscription.php">
+              <form class="g-py-15" method="post" action="includes/model/inscription.php">
                 <div class="row">
                   <div class="col-xs-12 col-sm-6 mb-4">
                     <div class="input-group">
@@ -140,11 +140,11 @@
               <?php
               if($_GET['msg']=="alert")
               {
-                include 'includes/ohSnapUser.php';
+                include 'includes/msg/ohSnapUser.php';
               }
               elseif($_GET['msg']=="success")
               {
-                include 'includes/wellDoneUser.php';
+                include 'includes/msg/wellDoneUser.php';
               }
                ?>
 

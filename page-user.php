@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -69,7 +71,7 @@
 
             <!--  Button sign out -->
             <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-              <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="includes/deconnexion.php">Se deconnecter</a>
+              <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="includes/model/deconnexion.php">Se deconnecter</a>
               <!--  End button sign out -->
           </div>
         </nav>
@@ -182,7 +184,7 @@
                         <i class="icon-list g-pos-rel g-top-1 g-mr-5"></i> Dernières publications
                       </h3>
                   </div>
-                  <?php include 'includes/user-lastImg.php' ?>
+                  <?php include 'includes/user/user-lastImg.php' ?>
                 </div>
                 <!-- End Notifications Panel -->
               </div>
@@ -196,14 +198,14 @@
             <header class="text-center mb-4">
               <h3 class="h3 g-color-darkgrey g-font-weight-600">Mes publications</h3>
             </header>
-          <?php include 'includes/user-myAll.php'; ?>
+          <?php include 'includes/user/user-myAll.php'; ?>
           <?php include 'includes/pagination.php' ?>
         </div>
 <!-- END PART PUBLISH -->
 
 <!-- PART SETTING -->
           <div class="col-lg-9" id="hereChoiseSetting" style="display:none">
-          <?php include "includes/user-setting.php" ?>
+          <?php include "includes/user/user-setting.php" ?>
           </div>
 <!-- END PART SETTING -->
 
@@ -213,14 +215,14 @@
                 <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonné(s)</h3>
               </header>
 
-             <?php include "includes/user-follower.php"; ?>
+             <?php include "includes/user/user-follower.php"; ?>
              <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FRIENDS -->
 
 <!-- PART FOLLOW -->
           <div class="col-lg-9" id="hereChoiseFollow" style="display:none">
-                <?php  include "includes/user-follow.php"; ?>
+                <?php  include "includes/user/user-follow.php"; ?>
                 <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FOLLOW -->
