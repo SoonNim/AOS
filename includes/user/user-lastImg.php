@@ -1,3 +1,20 @@
+
+<?php
+//Connexion base de donnée avec PDO 
+  include "bdd.php";
+
+
+ ?>
+
+
+
+
+
+
+
+
+
+
 <div class="row">
   <div class="col-md-2 g-mb-30">
     <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col6" data-src="web/assets/img-temp/400x270/img13.jpg" data-caption="Lightbox Gallery">
