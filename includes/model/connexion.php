@@ -6,7 +6,7 @@
     $login=$_POST['login'];
     $password=$_POST['password'];
 
-    //Connection base de donnée avec PDO
+    //Connexion base de donnée avec PDO
     try {
       include "bdd.php";
 
@@ -44,7 +44,7 @@
           $msg = "Login ou mot de passe incorrect";
 
           //Redirection
-          header("location:" . "connexion.php?msg=$msg");
+          header("location:" . "index.php?msg=$msg");
           exit;
         }
 

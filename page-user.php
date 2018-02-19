@@ -191,6 +191,7 @@
                       </h3>
                   </div>
                   <?php include 'includes/user/user-lastImg.php' ?>
+
                 </div>
                 <!-- End Notifications Panel -->
               </div>
