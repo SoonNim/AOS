@@ -28,14 +28,6 @@ if($stm->rowCount()>0){
   }
 
 $i=1;
-  // boucle tant qu'il y a des images
-// for ($i=1; $i <= $max ; $i++) {
-//   echo '<div class="col-md-2 g-mb-30">'.
-//   '<a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col6" data-src="web/assets/img-temp/400x270/img13.jpg" data-caption="Lightbox Gallery">
-//     '.
-//     '<img class="img-fluid" src="upload/'.$odata['img_link'].'" alt="Image Description">'.
-//   ' </a></div>'  ;
-// }
 
 while ($odata = $stm->fetch()) {
   if ($i<=$max) {

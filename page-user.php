@@ -165,13 +165,13 @@
                 <div class="g-bg-blue g-color-white g-pa-25">
                   <header class="d-flex text-uppercase g-mb-40">
                     <i class="icon-people align-self-center display-4 g-mr-20"></i>
+                    <h4 class="h5">Overal Visits</h4>
 
                     <div class="g-line-height-1">
-                      <h4 class="h5">Overal Visits</h4>
-                      <?php
-                      echo(' NOM :  '.$_SESSION['nom'].'   / PRENOM :   '.$_SESSION['prenom'].' / MAIL :  '.
-                      $_SESSION['mail'].'  / ID : '.$_SESSION['id_utilisateur'].'    / LINK : '.$_SESSION['img_link'].'    / USER : '.$_SESSION['id_user'])
-                       ?>
+                    <form class="g-py-15" method="post" action="includes/model/upload.php" enctype="multipart/form-data">
+                      <input type="file" name="myimg" id="myimg">
+                        <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-150" type = "upload" id="upload" name="uplaod" value="upload">Publier</button>
+                    </form>
                     </div>
                   </header>
                 </div>
