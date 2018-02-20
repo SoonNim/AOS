@@ -32,7 +32,7 @@
             exit;
             break;
 
-            case 'USER': header("Location: ../../page-user.php");
+            case 'USER': header("Location: ../../page-pint.php");
             exit;
             break;
 

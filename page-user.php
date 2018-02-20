@@ -46,15 +46,12 @@
   <main>
 
     <!-- Header -->
-     <header id="js-header" class="u-header u-header--static">
+    <header id="js-header" class="u-header u-header--static">
       <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
           <div class="container">
             <!-- Responsive Toggle Button -->
-            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1
-                    g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button"
-                    aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
-                    data-toggle="collapse" data-target="#navBar">
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
               <span class="hamburger hamburger--slider">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -64,10 +61,28 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Logo -->
-            <a href="page-pint.html" class="navbar-brand">
-              <img src="web/assets/img/logo-8.png" alt="Image Description">
+            <a href="index.html" class="navbar-brand">
+              <img src="includes/web/assets/img/logo-8.png" alt="Image Description">
             </a>
             <!-- End Logo -->
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Intro -->
+                <li class="hs-has-mega-menu nav-item  g-mx-10--lg g-mx-15--xl ">
+                  <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
+                </li>
+                <!-- End Intro -->
+
+                <!-- Home -->
+                <li class="nav-item active g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%" data-position="left">
+                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="page-user.php" aria-haspopup="true" aria-expanded="false">Profil</a>
+                </li>
+                <!-- End Home -->
+              </ul>
+            </div>
+            <!-- End Navigation -->
 
             <!--  Button sign out -->
             <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
@@ -84,10 +99,12 @@
       <div class="container">
         <ul class="u-list-inline">
           <li class="list-inline-item g-mr-7">
-            <a class="u-link-v5 g-color-main g-color-primary--hover" href="#!">Home</a>
+            <i class="fa fa-home"></i>
+            <a class="u-link-v5 g-color-main g-color-primary--hover" href="page-pint.php">Home</a>
             <i class="fa fa-angle-right g-ml-7"></i>
           </li>
           <li class="list-inline-item g-color-primary">
+            <i class="fa fa-user"></i>
               <span> <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?></span>
           </li>
         </ul>
