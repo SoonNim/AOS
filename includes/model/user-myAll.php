@@ -1,9 +1,8 @@
 <?php
+include "../../protection.php";
 // appel de l'initiation de variable pour se  connecter à la BDD
 include "bdd.php";
-// appel du fichier qui stocke tout les $_SESSION
-include "link.php";
-session_start();
+
 ?>
 
 <div class="row">

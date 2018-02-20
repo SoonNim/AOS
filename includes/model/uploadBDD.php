@@ -1,7 +1,7 @@
 <?php
-session_start();
+include "../../protection.php";
   include "bdd.php";
-  $id=31;
+  $id=$_SESSION['user'];
   try {
     // La requete SQL
     $queryI = "INSERT INTO images (img_id, img_link, id_user)

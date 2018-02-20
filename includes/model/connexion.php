@@ -1,6 +1,6 @@
 <?php
   //Activer le gestionnaire de session
-    session_start();
+      include "bdd.php";
 
   if (!empty($_POST['submit'])) {
     $login=$_POST['login'];
@@ -8,7 +8,6 @@
 
     //Connexion base de donnée avec PDO
     try {
-      include "bdd.php";
 
       // La requete SQL
       $query = "SELECT * FROM users WHERE users_login = '$login' AND users_mdp = '$password'";

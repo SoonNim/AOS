@@ -1,6 +1,6 @@
 <?php
   //Activer le gestionnaire de session
-    session_start();
+    include 'bdd.php';
 
   if (!empty($_POST['inscription'])) {
 
@@ -11,8 +11,6 @@
     $mail = $_POST['mail'];
     //Connection base de donnée avec PDO
     try {
-    include 'bdd.php';
-
       // La requete SQL
       $queryI = "INSERT INTO users (users_id, users_nom, users_prenom, users_login, users_mdp, users_active, users_role, users_mail)
       VALUES('','$nom', '$prenom', '$login', '$password', 1, 'USER', '$mail')";
