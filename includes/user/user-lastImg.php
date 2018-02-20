@@ -6,7 +6,7 @@
 $id = $_SESSION['user'];
 
 // requete SQL
-$query = "SELECT img_link FROM images WHERE id_user='$id'";
+$query = "SELECT img_link FROM images WHERE id_user='$id' ORDER BY img_id DESC";
 // lancer la requete --> renvoie une instance de PDOStatement
 $stm = $dbh->query($query);
 

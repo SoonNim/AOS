@@ -6,6 +6,7 @@ $_SESSION['active'] = $odata->users_active;
 $_SESSION['auth'] = $odata->users_login;
 $_SESSION['prenom'] = ucfirst(strtolower($odata->users_prenom));
 $_SESSION['mail'] = $odata->users_mail;
+$_SESSION['photo'] = $odata->users_photo;
 $_SESSION['id_utilisateur'] = "62570 -".$odata->users_id;
 $_SESSION['user'] = $odata->users_id;
 
