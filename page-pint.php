@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="web/assets/vendor/fancybox/jquery.fancybox.css">
   <link rel="stylesheet" href="web/assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="web/assets/vendor/hamburgers/hamburgers.min.css">
+  <link  rel="stylesheet" href="web/assets/vendor/custombox/custombox.min.css">
 
   <!-- CSS Unify -->
   <link rel="stylesheet" href="web/assets/css/unify-core.css">
@@ -143,25 +144,7 @@
     <!-- End Pagination -->
 
     <!-- Copyright Footer -->
-    <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-9">
-    <div class="container">
-     <div class="row">
-       <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
-         <div class="d-lg-flex">
-           <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 © All Rights Reserved.</small>
-           <ul class="u-list-inline">
-             <li class="list-inline-item">
-               <span>|</span>
-             </li>
-             <li class="list-inline-item">
-               <a class="g-color-white-opacity-0_8 g-color-white--hover" href="../index.html">PintAOS</a>
-             </li>
-           </ul>
-         </div>
-       </div>
-     </div>
-    </div>
-    </footer>
+    <?php include "includes/foot.php"?>
     <!-- End Copyright Footer -->
     <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
      "bottom": 15,
@@ -186,6 +169,8 @@
   <script src="web/assets/vendor/fancybox/jquery.fancybox.min.js"></script>
   <script src="web/assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
   <script src="web/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script  src="web/assets/vendor/custombox/custombox.min.js"></script>
+
 
   <!-- JS Unify -->
   <script src="web/assets/js/hs.core.js"></script>
@@ -194,6 +179,7 @@
   <script src="web/assets/js/components/hs.tabs.js"></script>
   <script src="web/assets/js/components/hs.popup.js"></script>
   <script src="web/assets/js/components/hs.go-to.js"></script>
+  <script  src="web/assets/js/components/hs.modal-window.js"></script>
 
   <!-- JS Customization -->
   <script src="web/assets/js/custom.js"></script>
@@ -201,6 +187,9 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
         // initialization of tabs
         $.HSCore.components.HSTabs.init('[role="tablist"]');
 
