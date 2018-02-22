@@ -74,12 +74,6 @@
                   <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
                 </li>
                 <!-- End Intro -->
-
-                <!-- Home -->
-                <li class="nav-item active g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%" data-position="left">
-                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="page-user.php" aria-haspopup="true" aria-expanded="false">Profil</a>
-                </li>
-                <!-- End Home -->
               </ul>
             </div>
             <!-- End Navigation -->
@@ -247,7 +241,12 @@
 
 <!-- PART FOLLOW -->
           <div class="col-lg-9" id="hereChoiseFollow" style="display:none">
+            <header class="text-center mb-4">
+              <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonnement(s)</h3>
+            </header>
+            <div class="row g-mb-40">
                 <?php  include "includes/user/user-follow.php"; ?>
+              </div>
                 <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FOLLOW -->
