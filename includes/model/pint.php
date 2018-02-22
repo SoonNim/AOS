@@ -12,8 +12,6 @@ $stmt=$dbh->query($query);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $odata=$stmt->fetch();
 
-
-//    <img class="g-width-10 g-height-10 rounded-circle" src="upload/'.$user->users_photo.'" alt="Image Description">
 //tester si au moins une image pour ce USER
 if($stmt->rowCount()>0){
   $j=1;
@@ -33,7 +31,8 @@ if($stmt->rowCount()>0){
                 <img class="g-width-400 g-height-250" src="upload/'.$odata->img_link.'" alt="Image Description">
                 <div class="g-pa-30">
                     <b><u>Publié par :</u></b>
-                    <img class="g-width-40 g-height-40 rounded-circle g-mb-20" src="upload/'.$user->users_photo.'" alt="Image Description">'.$name.'
+                    <img class="g-width-40 g-height-40 rounded-circle g-mb-20" src="upload/profil/'.$user->users_photo.'" alt="Image Description">
+                      <a class="u-link-v5 g-color-main g-color-primary--hover" href="page-profile.php?n='.$user->users_id.'">'.$name.'</a>
                 </div>
               </article>
               <!-- End Article -->
