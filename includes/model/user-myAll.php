@@ -19,7 +19,6 @@ include "bdd.php";
     //tester si au moins une Image pour ce User
     if($stmt->rowCount()>0)
     {
-      $odata = $stmt->fetch();
       $j=1;
 
       while ($odata = $stmt->fetch()) {
@@ -87,11 +86,13 @@ include "bdd.php";
             </div>
             <!-- End User Image -->
             <!-- User Skills -->
-            <div class="d-flex flex-wrap text-center">
-              <a class="btn btn-block u-btn-darkgray g-rounded-50 g-py-12 g-mb-10" href="#!">
-                <i class="fas fa-trash"></i>  Supprimer
-              </a>
-            </div>
+            <form method="post" action="includes/model/delete.php">
+                <div class="d-flex flex-wrap text-center">
+                  <button class="btn btn-block u-btn-darkgray g-rounded-50 g-py-12 g-mb-10" name="delete" value="'.$odata->img_id.'">
+                    <i class="fas fa-trash"></i>  Supprimer
+                  </button>
+                </div>
+            </form>
             <!-- End User Skills -->
           </div>
           ');
