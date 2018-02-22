@@ -4,12 +4,11 @@ include "includes/model/bdd.php";
 $id = $_SESSION['user'];
 
 // la requete SQL
-$query="SELECT id_user2 FROM friends WHERE id_user1='".$id."'";
+$query="SELECT friends_id, id_user2, dateUnion FROM friends WHERE id_user1='".$id."'";
 //lance la requete -->renvoie une instance PDOStatement
 $stmt=$dbh->query($query);
 //definir le mode de fetch
 $stmt->setFetchMode(PDO::FETCH_OBJ);
-$odata=$stmt->fetch();
 
 if($stmt->rowCount()>0){
   $j=1;
@@ -35,7 +34,9 @@ if($stmt->rowCount()>0){
                      <!-- Figure Image -->
 
                      <!-- Figure Info -->
-                     <h4 class="h5 g-mb-5">'.$name.'</h4>
+                     <h4 class="h4 g-mb-5">'.$name.'</h4>
+
+                     <h6 class="h6 g-mb-5"> abonné depuis le : '.date('d/m/Y', $odata->dateUnion).'</h6>
                      <!-- End Figure Info -->
                    </div>
 
@@ -49,7 +50,7 @@ if($stmt->rowCount()>0){
                        </a>
                      </li>
                      <li class="col g-brd-right g-brd-gray-light-v4">
-                       <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="#!">
+                       <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="includes/model/delete.php?id='.$odata->friends_id.'">
                          <i class="fas fa-trash"></i>
                        </a>
                      </li>
@@ -60,6 +61,9 @@ if($stmt->rowCount()>0){
                </div>
              <!-- End User Contacts -->
              ';
-  }
-}
- ?>
+           }
+         }
+         else {
+           echo'<p style="color:darkred; font-size:large">Vous n\'avez aucun abonnements';
+         }
+          ?>

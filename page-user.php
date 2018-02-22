@@ -114,8 +114,8 @@
             <!-- User Image -->
             <div class="u-block-hover g-pos-rel">
               <figure>
-                <img class="img-fluid w-100 u-block-hover__main--zoom-v1"
-                     src="upload/<?php echo ($_SESSION['photo']); ?>" alt="Image Description">
+                <?php  echo  '<img class="img-fluid w-100 u-block-hover__main--zoom-v1"
+                         src="upload/profil/'.$_SESSION['photo'].'" alt="Image Description">'; ?>
               </figure>
 
 
@@ -233,8 +233,9 @@
               <header class="text-center mb-4">
                 <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonné(s)</h3>
               </header>
-
+              <div class="row">
              <?php include "includes/user/user-follower.php"; ?>
+           </div>
              <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FRIENDS -->
@@ -255,32 +256,6 @@
         </div>
       </div>
     </section>
-
-  <!--  FOOTER -->
-
-  <!-- Copyright Footer -->
-  <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-9">
-  <div class="container">
-   <div class="row">
-     <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
-       <div class="d-lg-flex">
-         <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 © All Rights Reserved.</small>
-         <ul class="u-list-inline">
-           <li class="list-inline-item">
-             <span>|</span>
-           </li>
-           <li class="list-inline-item">
-             <a class="g-color-white-opacity-0_8 g-color-white--hover" href="../index.html">PintAOS</a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </div>
-  </div>
-  </footer>
-  <!-- End Copyright Footer -->
-
-  <!--  END FOOTER -->
 
     <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
      "bottom": 15,
