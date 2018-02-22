@@ -56,7 +56,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="navbar-brand">
-              <img src="includes/web/assets/img/logo-8.png" alt="Image Description">
+              <img src="web/assets/img/logo-8.png" alt="Image Description">
             </a>
             <!-- End Logo -->
 
