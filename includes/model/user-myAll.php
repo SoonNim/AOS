@@ -15,13 +15,16 @@ include "bdd.php";
     $stmt = $dbh->query($query);
     //Definir le mode de fetch
     $stmt->setFetchMode(PDO::FETCH_OBJ);
+    $row = $stmt->rowCount();
+    $records_par_page =3;
 
     //tester si au moins une Image pour ce User
     if($stmt->rowCount()>0)
     {
       $j=1;
 
-      while ($odata = $stmt->fetch()) {
+      while ($odata = $stmt->fetch())
+      {
       if($j <= 3)
       {
         echo(
@@ -99,18 +102,86 @@ include "bdd.php";
       }
       }
 
+    //
+    //   echo '
+    //   <br/>
+    //   <hr class="g-brd-gray-light-v4 g-my-0">
+    //   <br/>
+    //   <!-- Pagination -->
+    //   <nav class="text-center" aria-label="Page Navigation">
+    // '.paginglink($row,$records_per_page).'</nav>';
 
+}
 
+    // //Gère liens de la pagination
+    // function paginglink($row,$records_per_page)
+    // {
+    //     // La page courante
+    //     $self = $_SERVER['PHP_SELF'];
+    //
+    //     //$result->execute();
+    //
+    //     $total_no_of_records = $row;//compte le nombre d'images totales
+    //
+    //       echo  '<ul class="list-inline">';
+    //
+    //         // Nb total de pages = ceil(total des lignes / nb lignes par page)
+    //         $total_no_of_pages=ceil($total_no_of_records/$records_per_page);
+    //
+    //         // Page courante par défaut
+    //         $current_page=1;
+    //
+    //         // Page courante lue dans $_GET["page_no"]
+    //         if(isset($_GET["page_no"]))
+    //         {
+    //             $current_page=$_GET["page_no"];
+    //         }
+    //
+    //         // Si on n'est pas à la 1ère page
+    //         if($current_page!=1){
+    //             // On peut revenir, définir $previous
+    //             $previous =$current_page-1;
+    //
+    //             // Afficher les liens : Premier et Précédent
+    //             echo'<li class="list-inline-item float-sm-left">
+    //               <a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-16" href="'.$self.'" aria-label="Previous" page_no="'.$previous.'">
+    //                 <span aria-hidden="true">
+    //                   <i class="fa fa-angle-left g-mr-5"></i> Précédent
+    //                 </span>
+    //               </a>
+    //             </li>';
+    //         }
+    //
+    //         // Boucler pour avoir les liens intermédiaires
+    //         for($i=1;$i<=$total_no_of_pages;$i++){
+    //             if($i==$current_page){
+    //                 echo "<li><a href='".$self./*"?$param" . */"page_no=".$i."' style='color:red;'>".$i."</a></li>";
+    //                 echo'<li class="list-inline-item g-hidden-sm-down">
+    //                   <a class="u-pagination-v1__item u-pagination-v1-4 u-pagination-v1-4--active g-rounded-50 g-pa-7-14" href="'.$self.'" page_no="'.$i.'">'.$i.'</a>
+    //                 </li>';
+    //             }
+    //             else{
+    //                 echo "<li><a href='".$self./*"?$param" . */"page_no=".$i."'>".$i."</a></li>";
+    //                 echo'<li class="list-inline-item g-hidden-sm-down">
+    //                   <a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-14" href="'.$self.'" page_no="'.$i.'">'.$i.'</a>
+    //                 </li>';
+    //             }
+    //         }
+    //
+    //         // Si on n'est pas à la dernière page, créer les liens Suivant et Dernier
+    //         if($current_page!=$total_no_of_pages){
+    //             $next=$current_page+1;
+    //           echo '<li class="list-inline-item float-sm-right">
+    //               <a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-16" href="'.$self.'" aria-label="Next" page_no="'.$next.'">
+    //                 <span aria-hidden="true">
+    //                   Suivant <i class="fa fa-angle-right g-ml-5"></i>
+    //                 </span>
+    //               </a>
+    //             </li>';
+    //         }
+    //       echo  '</ul>';
+    // } // Fin liens de la pagination
 
-
-
-
-
-
-
-
-
-    }
 
  ?>
 

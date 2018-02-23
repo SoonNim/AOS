@@ -175,6 +175,12 @@ $prenom = ucfirst(strtolower($user->users_prenom)) ;
             </div>
             <!-- End Sidebar Navigation -->
 
+            
+
+
+
+
+
           </div>
           <!-- End Profile Sidebar -->
 
@@ -196,7 +202,6 @@ $prenom = ucfirst(strtolower($user->users_prenom)) ;
                       </h3>
                   </div>
                     <?php include 'includes/profil/profil-myAll.php'; ?>
-                     <?php include "includes/pagination.php"; ?>
 
                 </div>
                 <!-- End Notifications Panel -->
@@ -213,14 +218,18 @@ $prenom = ucfirst(strtolower($user->users_prenom)) ;
               </header>
 
              <?php include "includes/profil/profil-follower.php"; ?>
-             <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FRIENDS -->
 
 <!-- PART FOLLOW -->
           <div class="col-lg-9" id="hereChoiseFollow" style="display:none">
-                <?php  include "includes/profil/profil-follow.php"; ?>
-                <?php include "includes/pagination.php"; ?>
+            <header class="text-center mb-4">
+              <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonnement(s)</h3>
+            </header>
+            <div class="row g-mb-40">
+                <?php  include "includes/profil/profil-follow.php";
+                //avec paginiation?>
+              </div>
           </div>
 <!-- END PART FOLLOW -->
 

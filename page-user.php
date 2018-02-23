@@ -151,7 +151,7 @@
               <!-- End Users Contacts -->
 
               <!-- Reviews -->
-              <a href="#" class="list-group-item list-group-item-action justify-content-between" id="choiseReview">
+              <a href="?page_no=1" class="list-group-item list-group-item-action justify-content-between" id="choiseReview">
                 <span><i class="icon-heart g-pos-rel g-top-1 g-mr-8"></i> Publications</span>
               </a>
               <!-- End Reviews -->
@@ -217,8 +217,8 @@
             <header class="text-center mb-4">
               <h3 class="h3 g-color-darkgrey g-font-weight-600">Mes publications</h3>
             </header>
-          <?php include 'includes/model/user-myAll.php'; ?>
-          <?php include 'includes/pagination.php' ?>
+          <?php include 'includes/model/user-myAll.php';
+          // avec pagination?>
         </div>
 <!-- END PART PUBLISH -->
 
@@ -234,9 +234,9 @@
                 <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonné(s)</h3>
               </header>
               <div class="row">
-             <?php include "includes/user/user-follower.php"; ?>
+             <?php include "includes/user/user-follower.php";
+             // avec pagination?>
            </div>
-             <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FRIENDS -->
 
@@ -246,9 +246,9 @@
               <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonnement(s)</h3>
             </header>
             <div class="row g-mb-40">
-                <?php  include "includes/user/user-follow.php"; ?>
+                <?php  include "includes/user/user-follow.php";
+                //avec paginiation?>
               </div>
-                <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FOLLOW -->
 
