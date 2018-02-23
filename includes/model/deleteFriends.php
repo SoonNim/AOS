@@ -2,13 +2,13 @@
   //Activer le gestionnaire de session
     include 'bdd.php';
 
-    $id = $_POST['delete'];
+    $follow = $_GET['id'];
 
     //Connection base de donnée avec PDO
       try {
         // La requete SQL
-        $q="DELETE FROM images WHERE img_id=' ".$id." ' ";
-        $query ="SELECT * FROM images WHERE img_id='".$id."'";
+        $q="DELETE FROM friends WHERE friends_id=' ".$follow." ' ";
+        $query ="SELECT * FROM friends WHERE friends_id='".$follow."'";
 
         // Lancer la requete :renvoie une instance de PDOStatement
         $stmt = $dbh->query($query);
@@ -33,6 +33,8 @@
                     header("location:" . "../../page-user.php?msg=$msg");
                 exit;
         }
+
+
       }
         //Renvoie un PDOException
       catch (PDOException $e) {

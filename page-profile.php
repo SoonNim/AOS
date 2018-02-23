@@ -1,5 +1,20 @@
-<?php include "protection.php";?>
+<?php
+$id = $_GET['n'];
+ include 'includes/model/bdd.php';
 
+ //la requete SQL
+ $q="SELECT * FROM users WHERE users_id='".$id."'";
+ $stmt = $dbh->query($q);
+ $stmt->setFetchMode(PDO::FETCH_OBJ);
+ $user=$stmt->fetch();
+
+ $name = strtoupper($user->users_nom)."       ".ucfirst(strtolower($user->users_prenom));
+$mail = $user->users_mail;
+$photo = $user->users_photo;
+$nom = strtoupper($user->users_nom);
+$prenom = ucfirst(strtolower($user->users_prenom)) ;
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -51,7 +66,8 @@
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
           <div class="container">
             <!-- Responsive Toggle Button -->
-            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+            type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
               <span class="hamburger hamburger--slider">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -74,6 +90,12 @@
                   <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
                 </li>
                 <!-- End Intro -->
+
+                <!-- Home -->
+                <li class="nav-item active g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%" data-position="left">
+                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="page-user.php" aria-haspopup="true" aria-expanded="false">Profil</a>
+                </li>
+                <!-- End Home -->
               </ul>
             </div>
             <!-- End Navigation -->
@@ -99,7 +121,7 @@
           </li>
           <li class="list-inline-item g-color-primary">
             <i class="fa fa-user"></i>
-              <span> <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?></span>
+              <span> <?php   echo($name); ?></span>
           </li>
         </ul>
       </div>
@@ -114,8 +136,8 @@
             <!-- User Image -->
             <div class="u-block-hover g-pos-rel">
               <figure>
-                <?php  echo  '<img class="img-fluid w-100 u-block-hover__main--zoom-v1"
-                         src="upload/profil/'.$_SESSION['photo'].'" alt="Image Description">'; ?>
+            <?php  echo  '<img class="img-fluid w-100 u-block-hover__main--zoom-v1"
+                     src="upload/profil/'.$photo.'" alt="Image Description">'; ?>
               </figure>
 
 
@@ -123,7 +145,7 @@
               <!-- User Info -->
               <span class="g-pos-abs g-top-20 g-left-0">
                   <a class="btn btn-sm u-btn-primary rounded-0" href="#!">
-                    <?php   echo($_SESSION['nom']." ".$_SESSION['prenom']); ?>
+                    <?php   echo($name); ?>
                 </a>
                 </span>
               <!-- End User Info -->
@@ -150,17 +172,6 @@
               </a>
               <!-- End Users Contacts -->
 
-              <!-- Reviews -->
-              <a href="#" class="list-group-item list-group-item-action justify-content-between" id="choiseReview">
-                <span><i class="icon-heart g-pos-rel g-top-1 g-mr-8"></i> Publications</span>
-              </a>
-              <!-- End Reviews -->
-
-              <!-- Settings -->
-              <a href="#" class="list-group-item list-group-item-action justify-content-between" id="choiseSetting">
-                <span><i class="icon-settings g-pos-rel g-top-1 g-mr-8"></i> Paramètre</span>
-              </a>
-              <!-- End Settings -->
             </div>
             <!-- End Sidebar Navigation -->
 
@@ -171,24 +182,6 @@
 
 <!-- PART MAIN -->
         <div class="col-lg-9" id="hereChoiseMain" style="display:block">
-          <div class="row g-mb-10">
-              <div class="col-md-12 g-mb-30 g-mb-0--md">
-                <div class="g-bg-blue g-color-white g-pa-25">
-                  <header class="d-flex text-uppercase g-mb-40">
-                    <i class="icon-people align-self-center display-4 g-mr-20"></i>
-
-                    <div class="g-line-height-1">
-                      <h4 class="h5">Publier une photo</h4>
-                    <form class="g-py-15" method="post" action="includes/model/upload.php" enctype="multipart/form-data">
-                      <input type="file" name="myimg" id="myimg">
-                      <br/>
-                        <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-20" type = "upload" id="upload" name="uplaod" value="upload">Publier</button>
-                    </form>
-                    </div>
-                  </header>
-                </div>
-              </div>
-            </div>
             <!-- End Overall Statistics -->
 
             <!-- Projects & News Feeds Panels -->
@@ -199,10 +192,11 @@
                   <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5
                        border-0 g-mb-10">
                     <h3 class="h6 mb-0">
-                        <i class="icon-list g-pos-rel g-top-1 g-mr-5"></i> Dernières publications
+                        <i class="icon-list g-pos-rel g-top-1 g-mr-5"></i> Publications
                       </h3>
                   </div>
-                  <?php include 'includes/user/user-lastImg.php' ?>
+                    <?php include 'includes/profil/profil-myAll.php'; ?>
+                     <?php include "includes/pagination.php"; ?>
 
                 </div>
                 <!-- End Notifications Panel -->
@@ -212,42 +206,20 @@
         </div>
 <!-- END PART MAIN -->
 
-<!-- PART PUBLISH -->
-        <div class="col-lg-9" id="hereChoiseReview" style="display:none">
-            <header class="text-center mb-4">
-              <h3 class="h3 g-color-darkgrey g-font-weight-600">Mes publications</h3>
-            </header>
-          <?php include 'includes/model/user-myAll.php'; ?>
-          <?php include 'includes/pagination.php' ?>
-        </div>
-<!-- END PART PUBLISH -->
-
-<!-- PART SETTING -->
-          <div class="col-lg-9" id="hereChoiseSetting" style="display:none">
-          <?php include "includes/user/user-setting.php" ?>
-          </div>
-<!-- END PART SETTING -->
-
 <!-- PART FRIENDS -->
           <div class="col-lg-9" id="hereChoiseFriends" style="display:none">
               <header class="text-center mb-4">
                 <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonné(s)</h3>
               </header>
-              <div class="row">
-             <?php include "includes/user/user-follower.php"; ?>
-           </div>
+
+             <?php include "includes/profil/profil-follower.php"; ?>
              <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FRIENDS -->
 
 <!-- PART FOLLOW -->
           <div class="col-lg-9" id="hereChoiseFollow" style="display:none">
-            <header class="text-center mb-4">
-              <h3 class="h3 g-color-darkgrey g-font-weight-600">NB Abonnement(s)</h3>
-            </header>
-            <div class="row g-mb-40">
-                <?php  include "includes/user/user-follow.php"; ?>
-              </div>
+                <?php  include "includes/profil/profil-follow.php"; ?>
                 <?php include "includes/pagination.php"; ?>
           </div>
 <!-- END PART FOLLOW -->
@@ -269,7 +241,7 @@
 
 
   <!-- JS Global Compulsory -->
-  <script src="web/assets/js/choiseJS.js"></script>
+  <script src="web/assets/js/choiseJSProfil.js"></script>
   <script src="web/assets/vendor/popper.min.js"></script>
   <script src="web/assets/vendor/jquery/jquery.min.js"></script>
   <script src="web/assets/vendor/bootstrap/bootstrap.min.js"></script>
