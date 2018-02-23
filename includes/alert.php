@@ -42,5 +42,13 @@ $profil_pub_warn = '<!-- Danger Alert -->
 
     $user_follower_war = $profil_follower_war;
 
+    // UPDATE user
+
+    $user_update_danger ='<!-- Danger Alert -->
+      <div class="alert alert-danger" role="alert">
+        <strong>Oups!</strong> '.$error.'
+      </div>
+      <!-- End Danger Alert -->';
+
 
  ?>

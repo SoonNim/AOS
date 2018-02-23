@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="web/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="web/assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="web/assets/vendor/hamburgers/hamburgers.min.css">
+  <link  rel="stylesheet" href=".web/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
 
   <!-- CSS Unify -->
   <link rel="stylesheet" href="web/assets/css/unify-core.css">
@@ -115,7 +116,7 @@
             <div class="u-block-hover g-pos-rel">
               <figure>
                 <?php  echo  '<img class="img-fluid w-100 u-block-hover__main--zoom-v1"
-                         src="upload/profil/'.$_SESSION['photo'].'" alt="Image Description">'; ?>
+                         src="upload/'.$_SESSION['photo'].'" alt="Image Description">'; ?>
               </figure>
 
 
@@ -158,7 +159,7 @@
 
               <!-- Settings -->
               <a href="#" class="list-group-item list-group-item-action justify-content-between" id="choiseSetting">
-                <span><i class="icon-settings g-pos-rel g-top-1 g-mr-8"></i> Paramètre</span>
+                <span><i class="icon-settings g-pos-rel g-top-1 g-mr-8"></i> Paramètres</span>
               </a>
               <!-- End Settings -->
             </div>
@@ -172,6 +173,11 @@
 <!-- PART MAIN -->
         <div class="col-lg-9" id="hereChoiseMain" style="display:block">
           <div class="row g-mb-10">
+            <?php
+            if(!empty($update)){
+              echo $update;
+            }
+             ?>
               <div class="col-md-12 g-mb-30 g-mb-0--md">
                 <div class="g-bg-blue g-color-white g-pa-25">
                   <header class="d-flex text-uppercase g-mb-40">
@@ -268,6 +274,13 @@
   <div class="u-outer-spaces-helper"></div>
 
 
+  <!-- jQuery UI Helpers -->
+  <script  src="web/assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
+  <script  src="web/assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
+
+  <!-- jQuery UI Widgets -->
+  <script  src="web/assets/vendor/jquery-ui/ui/widgets/autocomplete.js"></script>
+
   <!-- JS Global Compulsory -->
   <script src="web/assets/js/choiseJS.js"></script>
   <script src="web/assets/vendor/popper.min.js"></script>
@@ -292,6 +305,8 @@
   <script src="web/assets/js/components/hs.chart-pie.js"></script>
   <script src="web/assets/js/components/hs.scrollbar.js"></script>
   <script src="web/assets/js/components/hs.progress-bar.js"></script>
+  <script  src="web/assets/js/components/hs.autocomplete.js"></script>
+
 
 
   <!-- JS Customization -->
@@ -300,6 +315,9 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+        // initialization of autocomplet
+        $.HSCore.components.HSAutocomplete.init('#autocomplete2');
+
         // initialization of go to
         $.HSCore.components.HSGoTo.init('.js-go-to');
 

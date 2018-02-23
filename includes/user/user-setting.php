@@ -21,6 +21,7 @@
             <!-- Tab panes -->
             <div id="nav-1-1-default-hor-left-underline" class="tab-content">
               <!-- Edit Profile -->
+              <form class="g-py-15" method="post" action="includes/model/setting.php" enctype="multipart/form-data">
               <div class="tab-pane fade show active" id="nav-1-1-default-hor-left-underline--1" role="tabpanel">
 
                 <ul class="list-unstyled g-mb-30">
@@ -28,11 +29,17 @@
                   <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
                     <div class="g-pr-10">
                       <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Nom</strong>
-                      <span class="align-top"><?php echo($_SESSION['nom'] )?></span>
+                      <span class="align-top"><?php echo($_SESSION['nom']) ?></span>
                     </div>
+                    <div class="row">
+                    <div class="col-xs-6">
+                      <input class="form-control rounded-0 form-control-md" type="text" name ="nom" value="<?php echo($_SESSION['nom'] )?>" id="showNom" style="display:none">
+                    </div>
+                  </div>
                     <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
+                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1" id="setNom"></i>
+                    </span>
+
                   </li>
                   <!-- End Name -->
 
@@ -42,9 +49,17 @@
                       <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Prenom</strong>
                       <span class="align-top"><?php echo($_SESSION['prenom']) ?></span>
                     </div>
+                    <div class="row">
+                    <div class="col-xs-6">
+
+                      <input class="form-control rounded-0 form-control-md" type="text" name ="prenom" value="<?php echo($_SESSION['prenom'] )?>" id="showPrenom" style="display:none">
+
+                    </div>
+                  </div>
                     <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
+                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-pos-rel g-top-1" id="setPrenom"></i>
+                    </span>
+
                   </li>
                   <!-- End FirstName -->
 
@@ -54,9 +69,16 @@
                       <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre identifiant</strong>
                       <span class="align-top"><?echo($_SESSION['auth'])?></span>
                     </div>
+                    <div class="row">
+                    <div class="col-xs-6">
+
+                      <input class="form-control rounded-0 form-control-md" type="text" name="ID" value="<?php echo($_SESSION['auth'] )?>" id="showID" style="display:none">
+
+                    </div>
+                  </div>
                     <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
+                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1" id="setID"></i>
+                    </span>
                   </li>
                   <!-- End Your Login -->
 
@@ -66,9 +88,16 @@
                       <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre adresse mail</strong>
                       <span class="align-top"><?echo($_SESSION['mail'])?></span>
                     </div>
+                    <div class="row">
+                    <div class="col-xs-6">
+
+                      <input class="form-control rounded-0 form-control-md" type="email" name="mail" value="<?php echo($_SESSION['mail'] )?>" id="showMail" style="display:none">
+
+                    </div>
+                  </div>
                     <span>
-                        <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                      </span>
+                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1" id="setMail"></i>
+                    </span>
                   </li>
                   <!-- End Primary Email Address -->
 
@@ -78,27 +107,30 @@
                     <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre photo de profil</strong>
                     <form class="g-py-15" method="post" action="includes/model/upload.php" enctype="multipart/form-data">
                     <span class="align-top"><?echo'<img class="align-self-center g-width-80 g-height-80 rounded-circle mr-4"
-                    src="upload/profil/'.$_SESSION['photo'].'" alt="Image Description">'?></span>
-
-                          <input type="file" name="face" id="myimg" />
+                    src="upload/'.$_SESSION['photo'].'" alt="Image Description">'?></span>
                     </form>
 
 
                   </div>
+                  <div class="row">
+                  <div class="col-xs-6">
+                    <input type="file" class="form-control-file"  aria-describedby="fileHelp" name="img" value="<?php echo($_SESSION['photo'] )?>" id="showImg" style="display:none">
+                  </div>
+                </div>
                   <span>
-                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"></i>
-                    </span>
+                    <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1" id="setImg"></i>
+                  </span>
                 </li>
                 <!-- End your face -->
                 </ul>
 
                 <div class="text-sm-right">
                   <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Annuler</a>
-                  <button class="btn u-btn-primary rounded-0 g-py-12 g-px-25" type = "upload" id="upload" name="uplaod" value="upload">Enregistrer</button>
+                  <button class="btn u-btn-primary rounded-0 g-py-12 g-px-25" type = "submit" id="upload" name="uplaod" value="upload">Enregistrer</button>
                 </div>
               </div>
               <!-- End Edit Profile -->
-
+            </form>
               <!-- Security Settings -->
               <div class="tab-pane fade" id="nav-1-1-default-hor-left-underline--2" role="tabpanel">
                 <h2 class="h4 g-font-weight-300">Sécurité</h2>
@@ -156,3 +188,97 @@
 
             </div>
             <!-- End Tab panes -->
+
+<script>
+            document.getElementById('setNom').onclick =
+            function()
+            {
+              //Si la table est masquée alors on l'affiche et on met à jour le texte du lien
+              if(document.getElementById('showNom').style.display == "none")
+              {
+                document.getElementById('showNom').style.display = "block";
+                document.getElementById('setNom').className="icon-action-undo g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+              }
+              else {
+                document.getElementById('showNom').style.display = "none";
+                document.getElementById('setNom').className="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+              }
+              return false; //Un simple return false ici désacative la suite de l'événement : le href
+            }
+
+
+            document.getElementById('setPrenom').onclick =
+            function()
+            {
+              //Si la table est masquée alors on l'affiche et on met à jour le texte du lien
+              if(document.getElementById('showPrenom').style.display == "none")
+              {
+                document.getElementById('showPrenom').style.display = "block";
+                document.getElementById('setPrenom').className="icon-action-undo g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              else {
+                document.getElementById('showPrenom').style.display = "none";
+                document.getElementById('setPrenom').className="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              return false; //Un simple return false ici désacative la suite de l'événement : le href
+            }
+
+
+            document.getElementById('setID').onclick =
+            function()
+            {
+              //Si la table est masquée alors on l'affiche et on met à jour le texte du lien
+              if(document.getElementById('showID').style.display == "none")
+              {
+                document.getElementById('showID').style.display = "block";
+                document.getElementById('setID').className="icon-action-undo g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              else {
+                document.getElementById('showID').style.display = "none";
+                document.getElementById('setID').className="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              return false; //Un simple return false ici désacative la suite de l'événement : le href
+            }
+
+
+            document.getElementById('setMail').onclick =
+            function()
+            {
+              //Si la table est masquée alors on l'affiche et on met à jour le texte du lien
+              if(document.getElementById('showMail').style.display == "none")
+              {
+                document.getElementById('showMail').style.display = "block";
+                document.getElementById('setMail').className="icon-action-undo g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              else {
+                document.getElementById('showMail').style.display = "none";
+                document.getElementById('setMail').className="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              return false; //Un simple return false ici désacative la suite de l'événement : le href
+            }
+
+
+            document.getElementById('setImg').onclick =
+            function()
+            {
+              //Si la table est masquée alors on l'affiche et on met à jour le texte du lien
+              if(document.getElementById('showImg').style.display == "none")
+              {
+                document.getElementById('showImg').style.display = "block";
+                document.getElementById('setImg').className="icon-action-undo g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              else {
+                document.getElementById('showImg').style.display = "none";
+                document.getElementById('setImg').className="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+
+              }
+              return false; //Un simple return false ici désacative la suite de l'événement : le href
+            }
+</script>
