@@ -112,6 +112,9 @@ include "bdd.php";
     // '.paginglink($row,$records_per_page).'</nav>';
 
 }
+else {
+  echo'<p style="color:darkred; font-size:large">Vous n\'avez aucune publications à partager';
+}
 
     // //Gère liens de la pagination
     // function paginglink($row,$records_per_page)

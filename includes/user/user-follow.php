@@ -53,7 +53,7 @@ if($stmt->rowCount()>0){
                        </a>
                      </li>
                      <li class="col g-brd-right g-brd-gray-light-v4">
-                       <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="includes/model/delete.php?id='.$odata->friends_id.'">
+                       <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-red--hover" href="includes/model/gereFollowUser.php?friend='.$odata->friends_id.'&user='.$user->users_id.'">
                          <i class="fas fa-trash"></i>
                        </a>
                      </li>

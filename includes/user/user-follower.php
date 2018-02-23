@@ -46,12 +46,6 @@ if ($stmt->rowCount()>0) {
                             <i class="fas fa-user-circle g-color-indigo"></i>
                           </a>
                         </li>
-                        <li class="list-inline-item g-mx-1">
-                          <a class="u-icon-v1 u-icon-size--sm g-color-white-opacity-0_8 g-color-black--hover g-bg-white--hover rounded-circle" href="includes/model/delete.php?id='.$odata->friends_id.'">
-                            <i class="fas fa-trash g-color-lightred"></i>
-                          </a>
-                        </li>
-
                       </ul>
                       <!-- End Figure Social Icons -->
                     </div>
