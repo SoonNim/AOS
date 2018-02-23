@@ -103,8 +103,8 @@ $prenom = ucfirst(strtolower($user->users_prenom)) ;
             <!--  Button sign out -->
             <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
               <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="includes/model/deconnexion.php">Se deconnecter</a>
-              <!--  End button sign out -->
           </div>
+            <!--  End button sign out -->
         </nav>
       </div>
     </header>
@@ -175,11 +175,9 @@ $prenom = ucfirst(strtolower($user->users_prenom)) ;
             </div>
             <!-- End Sidebar Navigation -->
 
-            
-
-
-
-
+            <!-- Follow and Unfollow -->
+            <?php include "includes/model/follow.php"; ?>
+            <!-- Follow and Unfollow -->
 
           </div>
           <!-- End Profile Sidebar -->

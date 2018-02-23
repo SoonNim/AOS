@@ -18,6 +18,9 @@ if ($stmt->rowCount()>0) {
         $stm->setFetchMode(PDO::FETCH_OBJ);
         $user=$stm->fetch();
 
+        $date = explode("-", $odata->dateUnion);
+        $newdate=$date[2].'/'.$date[1].'/'.$date[0];
+
         $name = strtoupper($user->users_nom)."       ".ucfirst(strtolower($user->users_prenom));
 
             echo '
@@ -33,7 +36,7 @@ if ($stmt->rowCount()>0) {
                     <!-- Figure Info -->
                     <div class="d-block align-self-center">
                       <h4 class="g-font-weight-600 g-font-size-16 g-color-white mb-2">'.$name.'</h4>
-                      <h6 class="g-font-weight-200 g-font-size-12 g-color-white mb-2">connecté depuis le : '.date('d/m/Y', $odata->dateUnion).'</h6>
+                      <h6 class="g-font-weight-200 g-font-size-12 g-color-white mb-2">connecté depuis le : '.$newdate.'</h6>
 
 
                       <!-- Figure Social Icons -->

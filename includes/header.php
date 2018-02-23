@@ -15,11 +15,4 @@ function retour_json($succes,$msg,$results=NULL)	{
 
 	echo json_encode($retour);
 }
-
-function user(){
-
-$query = "SELECT * FROM users";
-	  $stmt = $dbh->query($query);
-		return $stmt->rowCount();
-}
 ?>

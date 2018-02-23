@@ -22,6 +22,9 @@ if($stmt->rowCount()>0){
 
     $name = strtoupper($user->users_nom)."       ".ucfirst(strtolower($user->users_prenom));
 
+    $date = explode("-", $odata->dateUnion);
+    $newdate=$date[2].'/'.$date[1].'/'.$date[0];
+
     echo '
          <!-- User Contacts -->
 
@@ -36,7 +39,7 @@ if($stmt->rowCount()>0){
                      <!-- Figure Info -->
                      <h4 class="h4 g-mb-5">'.$name.'</h4>
 
-                     <h6 class="h6 g-mb-5"> abonné depuis le : '.date('d/m/Y', $odata->dateUnion).'</h6>
+                     <h6 class="h6 g-mb-5"> abonné depuis le : '.$newdate.'</h6>
                      <!-- End Figure Info -->
                    </div>
 
