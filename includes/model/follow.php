@@ -1,5 +1,4 @@
 <?php
-include "protection.php";
 include "bdd.php";
 
 $id1 = $_SESSION['user'];

@@ -6,22 +6,33 @@ include "bdd.php";
 <div class="row">
 
   <?php
+  $id_user = $_GET['n'];
     $lineBHR ='<br/> <hr class="g-brd-gray-light-v4 g-my-0"> <br/>';
 
   // la requete SQL
-    $query ="SELECT img_id, img_link FROM images WHERE id_user='$id' ORDER BY img_id DESC";
+    $query ="SELECT img_id, img_link FROM images WHERE id_user='$id_user' ORDER BY img_id DESC";
     // Lance la requete et envoi un instance de PDOStatement
     $stmt = $dbh->query($query);
     //Definir le mode de fetch
     $stmt->setFetchMode(PDO::FETCH_OBJ);
+    $row = $stmt->rowCount();
 
+    $id1 = $_SESSION['user'];
+    $id2 = $_GET['n'];
+
+    $q1="SELECT friends_id FROM friends WHERE id_user1='".$id1."' AND id_user2='".$id2."'";
+    $stmtQ1 = $dbh->query($q1);
+    $stmtQ1->setFetchMode(PDO::FETCH_OBJ);
+
+    if ($stmtQ1->rowCount()>0)
+    {
     //tester si au moins une Image pour ce User
     if($stmt->rowCount()>0)
     {
-      $odata = $stmt->fetch();
       $j=1;
 
-      while ($odata = $stmt->fetch()) {
+      while ($odata = $stmt->fetch())
+      {
       if($j <= 3)
       {
         echo(
@@ -67,7 +78,7 @@ include "bdd.php";
                   <!-- Figure name -->
                   <ul class="list-inline text-center g-flex-middle-item--bottom g-mb-20">
                     <li class="list-inline-item align-middle g-mx-7 g-color-white">
-                        <i class="fas fa-image"></i>  '.$odata->img_link.'
+                        <i class="fas fa-image"></i>  '.strrchr($odata->img_link,".").'
                     </li>
                   </ul>
                   <!-- End Figure name -->
@@ -80,19 +91,14 @@ include "bdd.php";
           ');
       }
       }
-
-
-
-
-
-
-
-
-
-
-
-
-    }
+}
+else {
+  echo'<p style="color:darkred; font-size:large">Vous n\'avez aucune publications à partager';
+}
+}
+else {
+  echo'<p style="color:darkred; font-size:large">Vous n\'avez pas accès à ce compte';
+}
 
  ?>
 

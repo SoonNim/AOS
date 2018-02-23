@@ -71,7 +71,7 @@
 
                 <!-- Home -->
                 <li class="hs-has-mega-menu nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%" data-position="left">
-                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="page-user.php" aria-haspopup="true" aria-expanded="false">Profil</a>
+                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="page-user.php" aria-haspopup="true" aria-expanded="false">Mon profil</a>
                 </li>
                 <!-- End Home -->
               </ul>
