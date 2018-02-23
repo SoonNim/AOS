@@ -9,11 +9,12 @@
     $login=$_POST['login'];
     $password=$_POST['password'];
     $mail = $_POST['mail'];
+    $photo ="profil_defaut.png";
     //Connection base de donnée avec PDO
     try {
       // La requete SQL
-      $queryI = "INSERT INTO users (users_id, users_nom, users_prenom, users_login, users_mdp, users_active, users_role, users_mail)
-      VALUES('','$nom', '$prenom', '$login', '$password', 1, 'USER', '$mail')";
+      $queryI = "INSERT INTO users (users_id, users_nom, users_prenom, users_login, users_mdp, users_active, users_role, users_mail,users_photo)
+      VALUES('','$nom', '$prenom', '$login', '$password', 1, 'USER', '$mail','$photo')";
 
       $query = "SELECT * FROM users WHERE users_nom='$nom' AND users_prenom='$prenom' AND users_login = '$login' AND users_mdp = '$password'";
 
