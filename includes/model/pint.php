@@ -1,5 +1,6 @@
 <?php
 //appel de l'initialisation de variable pour se connecter à la bdd
+include "protection.php";
 include "bdd.php";
 
 
@@ -25,6 +26,13 @@ if($stmt->rowCount()>0){
 
     $name = strtoupper($user->users_nom)."       ".ucfirst(strtolower($user->users_prenom));
 
+    if ($user->users_id == $_SESSION['user']) {
+      $link='<a class="u-link-v5 g-color-main g-color-primary--hover" href="page-user.php">'.$name.'</a>';
+    }
+    else {
+      $link='<a class="u-link-v5 g-color-main g-color-primary--hover" href="page-profile.php?n='.$user->users_id.'">'.$name.'</a>';
+    }
+
     $A='  <div class="masonry-grid-item col-lg-3 g-mb-30">
               <!-- Article -->
               <article class="u-shadow-v11 g-bg-white g-pos-rel">
@@ -32,7 +40,7 @@ if($stmt->rowCount()>0){
                 <div class="g-pa-30">
                     <b><u>Publié par :</u></b>
                     <img class="g-width-40 g-height-40 rounded-circle g-mb-20" src="upload/profil/'.$user->users_photo.'" alt="Image Description">
-                      <a class="u-link-v5 g-color-main g-color-primary--hover" href="page-profile.php?n='.$user->users_id.'">'.$name.'</a>
+                      '.$link.'
                 </div>
               </article>
               <!-- End Article -->
