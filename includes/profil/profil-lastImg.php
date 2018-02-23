@@ -2,6 +2,7 @@
 <?php
 //Connexion base de donnée avec PDO
   include "includes/model/bdd.php";
+  include "includes/alert.php";
 // Variables
 
 // requete SQL
@@ -49,11 +50,11 @@ if ($stmtQ1->rowCount()>0)
 
   }
   else {
-    echo'<p style="color:darkred; font-size:large">Vous n\'avez aucune photos à partager';
+  echo  $profil_last_warn;
   }
 }
 else {
-  echo'<p style="color:darkred; font-size:large">Vous n\'avez pas accès à ce compte';
+  echo  $profil_last_danger;
 }
 
  ?>

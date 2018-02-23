@@ -2,6 +2,7 @@
 <?php
 //Connexion base de donnée avec PDO
   include "includes/model/bdd.php";
+  include "includes/alert.php";
 // Variables
 $id = $_SESSION['user'];
 
@@ -42,7 +43,7 @@ while ($odata = $stm->fetch()) {
 
 }
 else {
-  echo'<p style="color:darkred; font-size:large">Vous n\'avez aucune photos à partager';
+  echo $user_last_warn;
 }
 
  ?>

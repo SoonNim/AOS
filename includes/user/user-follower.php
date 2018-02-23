@@ -1,5 +1,6 @@
 <?php
 include "includes/model/bdd.php";
+include "includes/alert.php";
 
 $id = $_SESSION['user'];
 
@@ -59,6 +60,6 @@ if ($stmt->rowCount()>0) {
   }
 }
 else {
-   echo'<p style="color:darkred; font-size:large">Vous n\'avez aucun abonnés';
+   echo $user_follower_war;
 }
  ?>

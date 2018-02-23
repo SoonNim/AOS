@@ -1,6 +1,7 @@
 <?php
 // appel de l'initiation de variable pour se  connecter à la BDD
 include "bdd.php";
+include "includes/alert.php";
 
 ?>
 <div class="row">
@@ -93,11 +94,11 @@ include "bdd.php";
       }
 }
 else {
-  echo'<p style="color:darkred; font-size:large">Vous n\'avez aucune publications à partager';
+  echo  $profil_pub_warn;
 }
 }
 else {
-  echo'<p style="color:darkred; font-size:large">Vous n\'avez pas accès à ce compte';
+  echo $profil_pub_danger;
 }
 
  ?>

@@ -1,5 +1,6 @@
 <?php
 include "includes/model/bdd.php";
+include "includes/alert.php";
 
 $id = $_GET['n'];
 
@@ -67,6 +68,6 @@ if($stmt->rowCount()>0){
            }
          }
          else {
-           echo'<p style="color:darkred; font-size:large">Vous n\'avez aucun abonnements';
+           echo $profil_follow_war;
          }
           ?>
