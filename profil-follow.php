@@ -4,9 +4,9 @@ include "includes/alert.php";
 
 $id = $_GET['n'];
 /*debut du cache */
-$cache = 'cache/cache.html'; //ICI ALIZEE CREE UN DOSSIER CACHE AVEC UN FICHIER CACHE.HTML vide
+$cache = 'cache/cache.html'; 
 $expire = time() -3600 ; // valable une heure
- 
+
 if(file_exists($cache) && filemtime($cache) > $expire)
 {
         readfile($cache);
@@ -82,8 +82,8 @@ if($stmt->rowCount()>0){
          }
 		       $page = ob_get_contents(); // copie du contenu du tampon dans une chaîne
         ob_end_clean(); // effacement du contenu du tampon et arrêt de son fonctionnement
-        
-        file_put_contents($cache, $page) ; // on écrit la chaîne précédemment récupérée ($page) dans un fichier ($cache) 
-        echo $page ; // on affiche notre page :D 
+
+        file_put_contents($cache, $page) ; // on écrit la chaîne précédemment récupérée ($page) dans un fichier ($cache)
+        echo $page ; // on affiche notre page :D
 }
           ?>

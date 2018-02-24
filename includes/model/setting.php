@@ -88,26 +88,4 @@ else {
     exit;
 }
 
-
-
-
-// if (empty($error)) {
-
-//
-// // Lancer la requete :renvoie une instance de PDOStatement
-// $dbh->query($Qsetting);
-// header("location:" . "../../page-user.php");
-
-// echo " nom : ".$nom."<br/> prenom : ".$prenom."<br/> login : ".$login."<br/> mail : ".$mail."<br/> photo : ".$photo."<br/> id : ".$id."";
-// }
-// else {
-//   //Redirection
-//   header("location:" . "../../page-user.php?update=$user_update_danger");
-// }
-
-
-
-
-
-
  ?>
