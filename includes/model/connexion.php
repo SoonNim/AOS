@@ -40,10 +40,10 @@
         }
         else{
           //Le compte est inactif
-          $msg = "Login ou mot de passe incorrect";
+          $msg = "Contacter l'administrateur votre compte n'est pas actif !";
 
           //Redirection
-          header("location:" . "index.php?msg=$msg");
+          header("location:" . "../../index.php?msg=$msg&c=alert");
           exit;
         }
 
@@ -53,7 +53,7 @@
         $msg = "Login ou mot de passe incorrect";
 
         //Redirection
-        header("location:" . "connexion.php?msg=$msg");
+        header("location:" . "../../index.php?msg=$msg&c=alert");
         exit;
       }
 

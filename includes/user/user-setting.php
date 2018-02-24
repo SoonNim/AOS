@@ -11,10 +11,6 @@
                 <a class="nav-link g-py-10 active" data-toggle="tab" href="#nav-1-1-default-hor-left-underline--1"
                    role="tab">Profil</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link g-py-10" data-toggle="tab" href="#nav-1-1-default-hor-left-underline--2"
-                   role="tab">Sécurité</a>
-              </li>
             </ul>
             <!-- End Nav tabs -->
 
@@ -82,6 +78,25 @@
                   </li>
                   <!-- End Your Login -->
 
+                  <!-- Your PassWord -->
+                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+                    <div class="g-pr-10">
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Votre mot de passe</strong>
+                      <span class="align-top"><?echo($_SESSION['mdp'])?></span>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-6">
+
+                      <input class="form-control rounded-0 form-control-md" type="password" name="pw" value="<?php echo($_SESSION['mdp'] )?>" id="showPW" style="display:none">
+
+                    </div>
+                  </div>
+                    <span>
+                      <i class="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1" id="setPW"></i>
+                    </span>
+                  </li>
+                  <!-- End Your PassWord -->
+
                     <!-- Primary Email Address -->
                   <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
                     <div class="g-pr-10">
@@ -131,65 +146,29 @@
               </div>
               <!-- End Edit Profile -->
             </form>
-              <!-- Security Settings -->
-              <div class="tab-pane fade" id="nav-1-1-default-hor-left-underline--2" role="tabpanel">
-                <h2 class="h4 g-font-weight-300">Sécurité</h2>
-
-                <form>
-                  <!-- Current Password -->
-                  <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Mot de passe actuel</label>
-                    <div class="col-sm-9">
-                      <div class="input-group g-brd-primary--focus">
-                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password">
-                        <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
-                          <i class="icon-lock"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Current Password -->
-
-                  <!-- New Password -->
-                  <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Nouveau mot de passe</label>
-                    <div class="col-sm-9">
-                      <div class="input-group g-brd-primary--focus">
-                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password">
-                        <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
-                          <i class="icon-lock"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End New Password -->
-
-                  <!-- Verify Password -->
-                  <div class="form-group row g-mb-25">
-                    <label class="col-sm-3 col-form-label g-color-gray-dark-v2 g-font-weight-700 text-sm-right g-mb-10">Confirmer mot de passe</label>
-                    <div class="col-sm-9">
-                      <div class="input-group g-brd-primary--focus">
-                        <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="password">
-                        <div class="input-group-addon d-flex align-items-center g-bg-white g-color-gray-light-v1 rounded-0">
-                          <i class="icon-lock"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Verify Password -->
-
-                  <div class="text-sm-right">
-                    <a class="btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10" href="#!">Annuler</a>
-                    <a class="btn u-btn-primary rounded-0 g-py-12 g-px-25" href="#!">Enregistrer</a>
-                  </div>
-                </form>
-              </div>
-              <!-- End Security Settings -->
 
             </div>
             <!-- End Tab panes -->
 
 <script>
+
+            document.getElementById('setPW').onclick =
+            function()
+            {
+              //Si la table est masquée alors on l'affiche et on met à jour le texte du lien
+              if(document.getElementById('showPW').style.display == "none")
+              {
+                document.getElementById('showPW').style.display = "block";
+                document.getElementById('setPW').className="icon-action-undo g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+              }
+              else {
+                document.getElementById('showPW').style.display = "none";
+                document.getElementById('setPW').className="icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer  g-pos-rel g-top-1";
+              }
+              return false; //Un simple return false ici désacative la suite de l'événement : le href
+            }
+
+
             document.getElementById('setNom').onclick =
             function()
             {

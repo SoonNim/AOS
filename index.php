@@ -69,6 +69,28 @@
               </form>
               <!-- End Form -->
 
+              <?php
+              if($_GET['c']=="alert")
+              {
+                include 'includes/alert.php';
+                $m=$_GET['msg'];
+                echo '<div class="alert alert-dismissible fade show g-bg-red g-color-white rounded-0" role="alert">
+                      <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+
+                      <div class="media">
+                        <span class="d-flex g-mr-10 g-mt-5">
+                          <i class="icon-ban g-font-size-25"></i>
+                        </span>
+                        <span class="media-body align-self-center">
+                          <strong>Ouups!</strong> '.$m.'
+                        </span>
+                      </div>
+                    </div>';
+              }
+               ?>
+
               <footer class="text-center">
                 <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Vous n'avez pas de compte ?
                     <a class="g-font-weight-600" href="page-signup.php">S'inscrire</a>

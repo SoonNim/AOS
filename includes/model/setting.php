@@ -9,6 +9,7 @@ $login = $_POST['ID'];
 $mail =$_POST['mail'];
 $id = $_SESSION['user'];
 $photo = $_FILES['img']['name'];
+$mdp = $_POST['pw'];
 
 if (!empty($photo))
 {
@@ -29,6 +30,11 @@ if (empty($login))
 $login = $_SESSION['auth'];
 }
 
+if (empty($mdp))
+{
+$mdp = $_SESSION['mdp'];
+}
+
 if (empty($mail))
 {
 $mail = $_SESSION['mail'];
@@ -43,14 +49,14 @@ $photo = $_SESSION['photo'];
 if ($msg =1)
 {
   $Qsetting ="UPDATE users
-  SET users_nom = '$nom' , users_prenom='$prenom', users_mail='$mail', users_photo='$photo', users_login='$login'
+  SET users_nom = '$nom' , users_prenom='$prenom', users_mail='$mail', users_photo='$photo', users_login='$login', users_mdp='$mdp'
   WHERE users_id='$id'";
 
   $dbh->query($Qsetting);
 
   $Qverif = "SELECT * FROM users WHERE users_id='$id'AND users_nom = '$nom' AND
   users_prenom='$prenom'AND users_mail='$mail' AND users_photo='$photo' AND
-  users_login='$login'";
+  users_login='$login' AND users_mdp='$mdp'";
 
   $stmtQVerif = $dbh->query($Qverif);
   $stmtQVerif->setFetchMode(PDO::FETCH_OBJ);
@@ -62,6 +68,7 @@ if ($msg =1)
     $_SESSION['prenom'] = ucfirst(strtolower($prenom));
     $_SESSION['mail'] = $mail;
     $_SESSION['photo'] = $photo;
+    $_SESSION['mdp'] = $mdp;
     //Redirection
     header("location:" . "../../page-user.php?msg=$msg");
     exit;

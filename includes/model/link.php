@@ -9,6 +9,7 @@ $_SESSION['mail'] = $odata->users_mail;
 $_SESSION['photo'] = $odata->users_photo;
 $_SESSION['id_utilisateur'] = "62570 -".$odata->users_id;
 $_SESSION['user'] = $odata->users_id;
+$_SESSION['mdp'] =$odata->users_mdp;
 
 // Variable session IMAGES
 $_SESSION['img_link'] = $odata->img_link;
