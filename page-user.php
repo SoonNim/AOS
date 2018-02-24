@@ -72,7 +72,7 @@
               <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
                 <!-- Intro -->
                 <li class="hs-has-mega-menu nav-item  g-mx-10--lg g-mx-15--xl ">
-                  <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
+                  <a href="page-pint.php" class="nav-link g-py-7 g-px-0">Home</a>
                 </li>
                 <!-- End Intro -->
               </ul>

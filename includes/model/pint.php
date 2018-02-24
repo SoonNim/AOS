@@ -39,7 +39,7 @@ if($stmt->rowCount()>0){
                 <img class="g-width-400 g-height-250" src="upload/'.$odata->img_link.'" alt="Image Description">
                 <div class="g-pa-30">
                     <b><u>Publié par :</u></b>
-                    <img class="g-width-40 g-height-40 rounded-circle g-mb-20" src="upload/profil/'.$user->users_photo.'" alt="Image Description">
+                    <img class="g-width-40 g-height-40 rounded-circle g-mb-20" src="upload/'.$user->users_photo.'" alt="Image Description">
                       '.$link.'
                 </div>
               </article>

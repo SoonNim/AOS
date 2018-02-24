@@ -34,7 +34,7 @@ if($stmt->rowCount()>0){
                  <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-cyan--hover g-transition-0_2 text-center">
                    <div class="g-py-40 g-px-20">
                      <!-- Figure Image -->
-                     <img class="g-width-100 g-height-100 rounded-circle g-mb-20" src="upload/profil/'.$user->users_photo.'" alt="Image Description">
+                     <img class="g-width-100 g-height-100 rounded-circle g-mb-20" src="upload/'.$user->users_photo.'" alt="Image Description">
                      <!-- Figure Image -->
 
                      <!-- Figure Info -->

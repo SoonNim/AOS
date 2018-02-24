@@ -31,7 +31,7 @@ if ($stmt->rowCount()>0) {
                 <figure class="u-shadow-v20 g-bg-cyan-gradient-opacity-v1 g-rounded-4 g-pa-30">
                   <div class="d-flex justify-content-start">
                     <!-- Figure Image -->
-                    <img class="align-self-center g-width-80 g-height-80 rounded-circle mr-4" src="upload/profil/'.$user->users_photo.'" alt="Image Description">
+                    <img class="align-self-center g-width-80 g-height-80 rounded-circle mr-4" src="upload/'.$user->users_photo.'" alt="Image Description">
                     <!-- Figure Image -->
 
                     <!-- Figure Info -->

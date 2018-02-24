@@ -2,7 +2,7 @@
 
   $dossier = '../../upload/';
   $fichier = basename($_FILES['img']['name']);
-  $error ="";
+  $msg ="";
 
   //On fait un tableau contenant les extensions autorisées.
   //Comme il s'agit d'un avatar pour l'exemple, on ne prend que des extensions d'images.
@@ -12,8 +12,8 @@
 
   if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
   {
-       $error = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
-       return $error;
+       $msg = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+       return $msg;
        exit;
   }
   else {
@@ -24,8 +24,8 @@
 
     if($taille>$taille_maxi)
     {
-         $error = 'Le fichier est trop gros...';
-         return $error;
+         $msg = 'Le fichier est trop gros...';
+         return $msg;
          exit;
     }
     else {
@@ -41,14 +41,12 @@
 
            if(move_uploaded_file($_FILES['img']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
            {
-             $error="Valide";
-             return $error;
-            include "uploadUserBDD.php";
-
+            // include "uploadUserBDD.php";
+                return $msg = 1;
            }
            else //Sinon (la fonction renvoie FALSE).
            {
-                $error = 'Echec de l\'upload !';
+                $msg = 'Echec de l\'upload !';
                 exit;
            }
          }

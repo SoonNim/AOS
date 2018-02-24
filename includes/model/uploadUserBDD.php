@@ -1,7 +1,5 @@
 <?php
-include "../../protection.php";
-  include "bdd.php";
-  $id=$_SESSION['user'];
+
   try {
     // La requete SQL
     $queryI = "INSERT INTO images (img_id, img_link, id_user)
@@ -21,11 +19,12 @@ include "../../protection.php";
       $odata = $stmt->fetch();
       //Déjà présent utilisateur
       $error = "existe déjà";
-      exit;
+      // exit;
     }
     else {
 
             $dbh->query($queryI);
+            return $msg = 1;
             exit;
     }
   } catch (PDOException $e) {
