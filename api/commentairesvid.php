@@ -2,26 +2,33 @@
 include '../includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        	$requete2 = $pdo->prepare("SELECT * FROM vid_comments");
-			$requete2->execute();
-			$resultats2 = $requete2->fetchAll();
+            $requete2 = $pdo->prepare("SELECT * FROM vid_comments");
+            $requete2->execute();
+            $resultats2 = $requete2->fetchAll();
 
-			$retour2["coms"]["donnee"] = $resultats2; 
-			$retour2["coms"]["nb de coms"] = count($resultats2);
+            $retour2["commentaire"]["donnee"] = $resultats2; 
+            $retour2["nombre de commentaire"] = count($resultats2);
 
-			retour_json(true,'Donnees coms vid',$retour2);
-			http_response_code(200);
+            retour_json(true,'Voici les donnees des commentaires videos',$retour2);
+            http_response_code(200);
 }
 
-/*else if ($_SERVER['REQUEST_METHOD'] == "POST") {}
+else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            retour_json(false,'La methode POST n est pas encore disponible ');
+            http_response_code(405);
 
-else if ($_SERVER['REQUEST_METHOD'] == "PUT") {}*/
+}
+
+else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
+            retour_json(false,'La methode PUT n est pas encore disponible ');
+            http_response_code(405);
+}
 
 else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
-	if(isset($_GET['id'])&& !empty( $_GET['id'] )){
+    if(isset($_GET['id'])&& !empty( $_GET['id'] )){
         $id=$_GET['id'];
 
-	 
+     
          //Requete SQL pour supprimer dans la base
         $req = "DELETE FROM vid_comments WHERE comvid_id = '$id'";
           
@@ -32,20 +39,20 @@ else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
         http_response_code(200);        
 
         $requete2 = $pdo->prepare("SELECT comvid_id,comm,id_date,id_friend,id_vid FROM vid_comments");
-		$requete2->execute();
-		$resultats2 = $requete2->fetchAll();
+        $requete2->execute();
+        $resultats2 = $requete2->fetchAll();
 
-		$retour2["coms"]["donnee"] = $resultats2; 
-		$retour2["coms"]["nb de coms"] = count($resultats2);
+        $retour2["commentaire"]["donnee"] = $resultats2; 
+        $retour2["nombre de commentaire"] = count($resultats2);
 
-		retour_json(true,'Donnees coms vid',$retour2);
+        retour_json(true,'Voici les donnees des commentaires videos après DELETE',$retour2);
     }
         
 
     else {
-    	http_response_code(404);
-    	retour_json(false,'ID NON VALIDE');
+        http_response_code(404);
+        retour_json(false,'ID NON VALIDE');
     }
 }
 
-	?>
+    ?>
