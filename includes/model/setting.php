@@ -13,7 +13,7 @@ $mdp = $_POST['pw'];
 
 if (!empty($photo))
 {
-  include "uploadUser";
+  include "uploadUser.php";
 }
 if (empty($nom))
 {

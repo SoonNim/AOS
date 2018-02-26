@@ -41,7 +41,6 @@
 
            if(move_uploaded_file($_FILES['img']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
            {
-            // include "uploadUserBDD.php";
                 return $msg = 1;
            }
            else //Sinon (la fonction renvoie FALSE).

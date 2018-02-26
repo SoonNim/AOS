@@ -4,7 +4,7 @@ include "includes/alert.php";
 
 $id = $_GET['n'];
 /*debut du cache */
-$cache = 'cache/cache.html'; 
+$cache = 'cache/cache.html';
 $expire = time() -3600 ; // valable une heure
 
 if(file_exists($cache) && filemtime($cache) > $expire)
