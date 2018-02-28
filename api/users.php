@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         	$requete = $pdo->prepare("SELECT * FROM users");
 			$requete->execute();
 			$resultats = $requete->fetchAll();
-			$retour["users"]["donnee"] = $resultats;
-			$retour["users"]["nb d'utilisateur"] = count($resultats);
+			$retour["utilisateur"]["donnee"] = $resultats;
+			$retour["nombre d'utilisateur"] = count($resultats);
 
-        	retour_json(true,'Retour des users',$retour);
+        	retour_json(true,'Voici les données des utilisateurs',$retour);
         	http_response_code(200);
         }
 else if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -31,7 +31,7 @@ else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 					// verifie si les champs existent
-					if(!empty($users_active && $users_role && $users_login && $users_prenom && $users_nom && $users_mdp && $users_photo)) {
+					if(!empty($users_active && $users_role && $users_login && $users_prenom && $users_nom && $users_mdp && $users_photo && $users_mail)) {
 
 					$query='INSERT INTO users(users_active, users_login, users_mdp, users_nom, users_prenom, users_role,users_mail, users_photo)
 					VALUES(:users_active, :users_login, :users_mdp, :users_nom, :users_prenom, :users_role, :users_mail, :users_photo)';
@@ -44,8 +44,8 @@ else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				        $req->bindParam(':users_nom',$users_nom);
 						$req->bindParam(':users_prenom',$users_prenom);
 				        $req->bindParam(':users_role',$users_role);
-								$req->bindParam(':users_mail',$users_mail);
-								$req->bindParam(':users_photo',$users_photo);
+						$req->bindParam(':users_mail',$users_mail);
+						$req->bindParam(':users_photo',$users_photo);
 
 				        //execution de la requete
 				        $req ->execute();
@@ -54,15 +54,15 @@ else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				        $requete = $pdo->prepare("SELECT * FROM users");
 						$requete->execute();
 						$resultats = $requete->fetchAll();
-						$retour["Utilisateur"]["donnee"] = $resultats;
-						$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+						$retour["utilisateur"]["donnee"] = $resultats;
+						$retour["nombre d'utilisateur"] = count($resultats);
 
 				        http_response_code(200);
 				        retour_json(true,'l\'utilisateur a été ajouté',$retour);
                     }
 
                  	else {
-                		retour_json(false,"Les informations sont erronées");
+                		retour_json(false,"Les informations sont erronées ! Verifiez l'orthographe des parametres !");
                         http_response_code(400);
                         }
 }
@@ -79,13 +79,13 @@ else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
                 $postBody = json_decode($postBody);
 
                 $users_active = $postBody->users_active;
-        $users_login = $postBody->users_login;
-        $users_mdp = $postBody->users_mdp;
-        $users_nom = $postBody->users_nom;
-        $users_prenom = $postBody->users_prenom;
-        $users_role = $postBody->users_role;
-        $users_mail = $postBody->users_mail;
-        $users_photo = $postBody->users_photo;
+		        $users_login = $postBody->users_login;
+		        $users_mdp = $postBody->users_mdp;
+		        $users_nom = $postBody->users_nom;
+		        $users_prenom = $postBody->users_prenom;
+		        $users_role = $postBody->users_role;
+		        $users_mail = $postBody->users_mail;
+		        $users_photo = $postBody->users_photo;
 
 
 					// verifie si les champs existent
@@ -93,7 +93,7 @@ else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
 
 
 					$req = $pdo->prepare('UPDATE users SET users_active=:users_active, users_login=:users_login, users_mdp=:users_mdp, users_photo=:users_photo, users_mail=:users_mail,
-            users_nom=:users_nom, users_prenom=:users_prenom, users_role=:users_role WHERE users_id = :users_id');
+            			users_nom=:users_nom, users_prenom=:users_prenom, users_role=:users_role WHERE users_id = :users_id');
 
 				    $req->execute(array('users_active' => $users_active, 'users_login' => $users_login, 'users_mdp' => $users_mdp,'users_photo' => $users_photo, 'users_mail' => $users_mail,
             'users_nom' => $users_nom, 'users_prenom' => $users_prenom, 'users_role' => $users_role, 'users_id' => $id));
@@ -102,11 +102,11 @@ else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
 				        $requete = $pdo->prepare("SELECT * FROM users");
 						$requete->execute();
 						$resultats = $requete->fetchAll();
-						$retour["Utilisateur"]["donnee"] = $resultats;
-						$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+						$retour["utilisateur"]["donnee"] = $resultats;
+						$retour["nombre d'utilisateur"] = count($resultats);
 
 				        http_response_code(200);
-				        retour_json(true,'L\'utilisateur a été ajouté',$retour);
+				        retour_json(true,'L\'utilisateur a été modifié',$retour);
                     }
 
 
@@ -142,10 +142,10 @@ else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
         $requete = $pdo->prepare("SELECT * FROM users");
 			$requete->execute();
 			$resultats = $requete->fetchAll();
-			$retour["Utilisateur"]["donnee"] = $resultats;
-			$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+			$retour["utilisateur"]["donnee"] = $resultats;
+			$retour["nombre d'utilisateur"] = count($resultats);
 
-        	retour_json(true,'Données utilisateur',$retour);
+        	retour_json(true,'Voici les nouvelles données après DELETE',$retour);
         }
 
     else {
